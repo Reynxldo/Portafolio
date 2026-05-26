@@ -84,7 +84,7 @@
     font-size:0.72rem; text-transform:uppercase;
     letter-spacing:0.12em; color:var(--amber);
     font-family:'Syne',sans-serif;
-    margin-bottom:2rem;
+    margin-top:1.5rem;
   }
   .hero-label::before {
     content:''; width:6px; height:6px; border-radius:50%;
@@ -136,12 +136,12 @@
     text-transform:uppercase; letter-spacing:0.2em; margin-bottom:0.8rem;
   }
   .sobre-mi-texto p {
-      color:var(--muted); font-weight:300;
-      font-size:1.05rem; line-height:1.85; margin-bottom:1.2rem; max-width:800px;
-      text-align:center;
-      margin-left:auto;
-      margin-right:auto;
-      }
+    color:var(--muted); font-weight:300;
+    font-size:1.05rem; line-height:1.85; margin-bottom:1.2rem; max-width:800px;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+  }
 
   /* FRASE */
   .frase-wrap { margin-bottom:3rem; }
@@ -183,7 +183,7 @@
   }
   .section-title em { font-style:normal; color:var(--amber); }
 
-  /* PERFIL */
+  /* PERFIL (aporte personal) */
   .perfil-layout {
     display:grid; grid-template-columns:1.1fr 0.9fr; gap:5rem; align-items:start;
   }
@@ -361,6 +361,13 @@
   .cardio-mod span { font-size:0.9rem; color:var(--warm-white); }
   .syn-row { background:var(--bg); border-left:2px solid var(--amber); padding:1rem 1.5rem; border-radius:0 3px 3px 0; margin-bottom:0.8rem; font-size:0.95rem; color:var(--warm-white); }
 
+  /* SEPARADOR APORTE */
+  .aporte-divider {
+    border-top: 1px solid var(--border);
+    margin-top: 5rem;
+    padding-top: 5rem;
+  }
+
   /* CONTACTO */
   .contacto-wrap { display:flex; flex-direction:column; align-items:center; text-align:center; padding:5rem 0 3rem; }
   .contacto-icon { width:56px; height:56px; border-radius:50%; border:1px solid var(--amber); display:flex; align-items:center; justify-content:center; margin-bottom:2rem; background:rgba(245,158,11,0.07); font-size:1.3rem; }
@@ -428,14 +435,14 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
 <nav>
   <div class="nav-brand">REYNALDO <em>· ING. ELECTRÓNICA</em></div>
   <ul class="nav-links">
-    <li><a href="#" onclick="showSection('inicio');return false;" class="nav-btn active" data-sec="inicio">Perfil</a></li>  
+    <li><a href="#" onclick="showSection('inicio');return false;" class="nav-btn active" data-sec="inicio">Perfil</a></li>
     <li><a href="#" onclick="showSection('equipo');return false;" class="nav-btn" data-sec="equipo">Equipo</a></li>
     <li><a href="#" onclick="showSection('proyectos');return false;" class="nav-btn" data-sec="proyectos">Proyectos</a></li>
     <li><a href="#" onclick="showSection('contacto');return false;" class="nav-btn" data-sec="contacto">Contacto</a></li>
   </ul>
 </nav>
 
-<!-- INICIO -->
+<!-- PERFIL (antes Inicio) -->
 <section id="inicio" class="page-section" style="padding-top:80px;">
   <div style="max-width:1280px; margin:0 auto; padding:2rem 6% 5rem;">
 
@@ -467,7 +474,7 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
     </div>
 
     <!-- Frase -->
-    <div class="frase-wrap">
+    <div class="frase-wrap" style="display:flex; justify-content:center;">
       <blockquote class="hero-quote">
         <span class="hero-quote-text">"La ingeniería es la profesión más cercana a hacer magia."</span>
         <cite class="hero-quote-author">— Elon Musk</cite>
@@ -512,32 +519,6 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
   </div>
 </section>
 
-<!-- PERFIL -->
-<div class="section-divider"></div>
-<div class="section-wrap-alt">
-<section id="perfil" class="page-section section" style="display:none;">
-  <div class="section-eyebrow">Evaluación de Competencias</div>
-  <h2 class="section-title">Rol Analítico y <em>Aporte Personal</em></h2>
-  <div class="perfil-layout">
-    <div class="perfil-text">
-      <p>En el ecosistema de trabajo de nuestro equipo, mi rol natural se consolidó en la <strong>columna vertebral matemática</strong> de cada diseño. Mientras la arquitectura del circuito tomaba forma, era mi responsabilidad garantizar que cada resistencia, cada condensador y cada frecuencia de corte respondieran a una ecuación de diseño justificada y verificable.</p>
-      <p>Esto implicó dominar desde el análisis de mallas y la derivación de funciones de transferencia en el dominio de Laplace, hasta el dimensionamiento paramétrico bajo restricciones reales como tolerancias de componentes, limitaciones de slew rate y comportamiento no ideal de los amplificadores operacionales.</p>
-      <p>Mi valor diferencial no estuvo en hacer los cálculos mecánicamente, sino en <strong>entender el porqué de cada número</strong> y comunicarlo al equipo.</p>
-    </div>
-    <div>
-      <div class="competencia-card">
-        <h4>Liderazgo Técnico — Proyecto 2: Raster Scan</h4>
-        <p>Asumí el rol de <strong>Líder del Proyecto</strong> en el sistema de conteo de colonias bacterianas. Coordiné el flujo de trabajo entre los cinco roles del equipo, garantizando coherencia entre los cálculos de diseño y la implementación física. Bajo mi liderazgo el prototipo alcanzó operación funcional completa con un presupuesto de $18.70 USD.</p>
-      </div>
-      <div class="competencia-card">
-        <h4>Autoría del Proyecto 1 — Filtro Sallen-Key</h4>
-        <p>Diseñé, calculé y simulé en su totalidad la arquitectura Sallen-Key. Desde la deducción de la función de transferencia de segundo orden hasta la medición experimental en osciloscopio, todo el desarrollo matemático fue de mi autoría.</p>
-      </div>
-    </div>
-  </div>
-</section>
-</div>
-
 <!-- EQUIPO -->
 <div class="section-divider"></div>
 <div class="section-wrap-default">
@@ -572,6 +553,30 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
       <p class="miembro-desc">Memoria técnica del equipo. Auditoría y estructuración de toda la evidencia experimental.</p>
     </div>
   </div>
+
+  <!-- APORTE PERSONAL — antes sección Perfil -->
+  <div class="aporte-divider">
+    <div class="section-eyebrow">Evaluación de Competencias</div>
+    <h2 class="section-title">Rol Analítico y <em>Aporte Personal</em></h2>
+    <div class="perfil-layout">
+      <div class="perfil-text">
+        <p>En el ecosistema de trabajo de nuestro equipo, mi rol natural se consolidó en la <strong>columna vertebral matemática</strong> de cada diseño. Mientras la arquitectura del circuito tomaba forma, era mi responsabilidad garantizar que cada resistencia, cada condensador y cada frecuencia de corte respondieran a una ecuación de diseño justificada y verificable.</p>
+        <p>Esto implicó dominar desde el análisis de mallas y la derivación de funciones de transferencia en el dominio de Laplace, hasta el dimensionamiento paramétrico bajo restricciones reales como tolerancias de componentes, limitaciones de slew rate y comportamiento no ideal de los amplificadores operacionales.</p>
+        <p>Mi valor diferencial no estuvo en hacer los cálculos mecánicamente, sino en <strong>entender el porqué de cada número</strong> y comunicarlo al equipo.</p>
+      </div>
+      <div>
+        <div class="competencia-card">
+          <h4>Liderazgo Técnico — Proyecto 2: Raster Scan</h4>
+          <p>Asumí el rol de <strong>Líder del Proyecto</strong> en el sistema de conteo de colonias bacterianas. Coordiné el flujo de trabajo entre los cinco roles del equipo, garantizando coherencia entre los cálculos de diseño y la implementación física. Bajo mi liderazgo el prototipo alcanzó operación funcional completa con un presupuesto de $18.70 USD.</p>
+        </div>
+        <div class="competencia-card">
+          <h4>Autoría del Proyecto 1 — Filtro Sallen-Key</h4>
+          <p>Diseñé, calculé y simulé en su totalidad la arquitectura Sallen-Key. Desde la deducción de la función de transferencia de segundo orden hasta la medición experimental en osciloscopio, todo el desarrollo matemático fue de mi autoría.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </section>
 </div>
 
@@ -624,7 +629,6 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
 
     <div class="divider" style="margin:2rem 0;"></div>
 
-    <!-- Imagen simulación -->
     <div class="img-feature" onclick="lb(this)" style="max-width:700px;">
       <img src="imagenes/sallen-key.png" alt="Simulación Sallen-Key en Multisim">
       <div class="img-caption">Fig 1.1 — Simulación del circuito Sallen-Key en NI Multisim</div>
