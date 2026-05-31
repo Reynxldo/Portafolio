@@ -413,12 +413,14 @@ function abrirProyecto(n) {
   document.getElementById('proyectos-galeria').style.display = 'none';
   document.getElementById('proyectos-header').style.display = 'none';
   document.getElementById('proyecto-detalle-'+n).style.display = '';
+  document.getElementById('btn-volver-flotante').style.display = 'flex';
   window.scrollTo(0,0);
 }
 function volverGaleria() {
   document.querySelectorAll('.proyecto-detalle').forEach(el => el.style.display = 'none');
   document.getElementById('proyectos-header').style.display = '';
   document.getElementById('proyectos-galeria').style.display = '';
+  document.getElementById('btn-volver-flotante').style.display = 'none';
   window.scrollTo(0,0);
 }
 document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
@@ -929,5 +931,6 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
   <p style="margin-top:0.3rem; font-size:0.78rem; opacity:0.5;">Universidad Surcolombiana · Electrónica Analógica III · 2026</p>
 </footer>
 
+<button id="btn-volver-flotante" onclick="volverGaleria()" style="display:none; position:fixed; bottom:2rem; right:2rem; z-index:999; align-items:center; gap:0.5rem; background:var(--amber); color:#000; font-weight:700; font-family:'Syne',sans-serif; font-size:0.85rem; padding:0.8rem 1.4rem; border:none; border-radius:6px; cursor:pointer; box-shadow:0 4px 20px rgba(249,115,22,0.4); transition:transform 0.15s,box-shadow 0.15s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 24px rgba(249,115,22,0.6)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 20px rgba(249,115,22,0.4)'">← Volver a Proyectos</button>
 </body>
 </html>
