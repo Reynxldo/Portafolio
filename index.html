@@ -32,7 +32,6 @@
   }
   h1,h2,h3,h4,h5 { font-family: 'Syne', sans-serif; }
 
-  /* NAV */
   nav {
     position:fixed; top:0; width:100%; z-index:999;
     display:flex; justify-content:space-between; align-items:center;
@@ -55,14 +54,12 @@
   }
   .nav-links a:hover, .nav-links a.active { color:var(--cyan); }
 
-  /* SECCIONES */
   .page-section { animation: fadeSlide 0.45s ease; }
   @keyframes fadeSlide {
     from { opacity:0; transform:translateY(20px); }
     to   { opacity:1; transform:translateY(0); }
   }
 
-  /* INICIO */
   #inicio {
     min-height:100vh;
     padding:100px 6% 5rem;
@@ -125,7 +122,6 @@
   }
   .photo-tag span { color:var(--amber); }
 
-  /* SOBRE MÍ */
   .sobre-mi-wrap {
     border-top:1px solid var(--border);
     padding-top:3rem; margin-bottom:3rem;
@@ -143,7 +139,6 @@
     margin-right:auto;
   }
 
-  /* FRASE */
   .frase-wrap { margin-bottom:3rem; }
   .hero-quote {
     border-left:3px solid var(--cyan);
@@ -160,13 +155,11 @@
     text-transform:uppercase; letter-spacing:0.12em; color:var(--cyan); font-style:normal;
   }
 
-  /* CIRCUITO ANIMADO */
   .circuito-wrap {
     border-top:1px solid var(--border);
     padding-top:2rem; opacity:0.8;
   }
 
-  /* SECTION WRAPPERS */
   .section-wrap-alt { background:var(--bg-card); }
   .section-wrap-default { background:var(--bg); }
   .section-divider {
@@ -183,7 +176,6 @@
   }
   .section-title em { font-style:normal; color:var(--amber); }
 
-  /* PERFIL (aporte personal) */
   .perfil-layout {
     display:grid; grid-template-columns:1.1fr 0.9fr; gap:5rem; align-items:start;
   }
@@ -199,7 +191,6 @@
   .competencia-card h4 { font-size:1rem; margin-bottom:0.8rem; color:var(--warm-white); }
   .competencia-card p { font-size:0.95rem; color:var(--muted); line-height:1.7; font-weight:300; }
 
-  /* EQUIPO */
   .equipo-intro {
     font-size:1.05rem; color:var(--muted);
     max-width:860px; margin-bottom:3.5rem; font-weight:300; line-height:1.8;
@@ -221,7 +212,6 @@
   .miembro-nombre { font-size:1.2rem; font-weight:700; margin-bottom:0.8rem; }
   .miembro-desc { font-size:0.9rem; color:var(--muted); line-height:1.6; font-weight:300; }
 
-  /* PROYECTOS */
   .pcard {
     background:var(--bg-card); border:1px solid var(--border);
     border-radius:4px; overflow:hidden; margin-bottom:5rem;
@@ -249,7 +239,6 @@
   .pcard-body-sm { padding:3rem 4rem; }
   .divider { width:100%; height:1px; background:var(--border); margin:0; }
 
-  /* IMÁGENES */
   .img-feature {
     background:var(--bg); border:1px solid var(--border);
     padding:1.5rem; border-radius:2px; cursor:zoom-in;
@@ -262,7 +251,6 @@
     letter-spacing:0.1em; color:var(--muted); text-align:center; margin-top:1rem;
   }
 
-  /* GRIDS */
   .sk-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start; }
   .sk-grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-bottom:2.5rem; }
   .sk-block {
@@ -359,16 +347,13 @@
   .cardio-mod { background:rgba(245,158,11,0.07); border:1px solid var(--border-strong); padding:1rem 1.2rem; border-radius:2px; flex:0 0 auto; min-width:220px; }
   .cardio-mod strong { display:block; color:var(--amber); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:0.3rem; font-family:'Syne',sans-serif; }
   .cardio-mod span { font-size:0.9rem; color:var(--warm-white); }
-  .syn-row { background:var(--bg); border-left:2px solid var(--amber); padding:1rem 1.5rem; border-radius:0 3px 3px 0; margin-bottom:0.8rem; font-size:0.95rem; color:var(--warm-white); }
 
-  /* SEPARADOR APORTE */
   .aporte-divider {
     border-top: 1px solid var(--border);
     margin-top: 5rem;
     padding-top: 5rem;
   }
 
-  /* CONTACTO */
   .contacto-wrap { display:flex; flex-direction:column; align-items:center; text-align:center; padding:5rem 0 3rem; }
   .contacto-icon { width:56px; height:56px; border-radius:50%; border:1px solid var(--amber); display:flex; align-items:center; justify-content:center; margin-bottom:2rem; background:rgba(245,158,11,0.07); font-size:1.3rem; }
   .contacto-wrap h3 { font-size:2rem; font-weight:700; margin-bottom:1rem; }
@@ -378,16 +363,13 @@
   .contact-link:hover { border-color:var(--amber); background:rgba(245,158,11,0.05); }
   .contact-link .cicon { color:var(--amber); }
 
-  /* FOOTER */
   footer { text-align:center; padding:3rem 6%; border-top:1px solid var(--border); background:var(--bg-card); }
   footer .fname { font-family:'Syne',sans-serif; font-weight:700; font-size:1rem; color:var(--amber); margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:1px; }
   footer p { font-size:0.82rem; color:var(--muted); font-weight:300; }
 
-  /* LIGHTBOX */
   #lb { position:fixed; inset:0; background:rgba(13,10,7,0.96); z-index:2000; display:none; justify-content:center; align-items:center; cursor:zoom-out; backdrop-filter:blur(10px); }
   #lb img { max-width:90vw; max-height:90vh; border:1px solid var(--amber); border-radius:3px; }
 
-  /* RESPONSIVE */
   @media (max-width:1024px) {
     .inicio-top { grid-template-columns:1fr; }
     .photo-frame-lg { height:320px; }
@@ -405,7 +387,6 @@
 </head>
 <body>
 
-<!-- LIGHTBOX -->
 <div id="lb" onclick="document.getElementById('lb').style.display='none'">
   <img id="lb-img" src="" alt="">
 </div>
@@ -431,7 +412,6 @@ function showSection(id) {
 document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
 </script>
 
-<!-- NAV -->
 <nav>
   <div class="nav-brand">REYNALDO <em>· ING. ELECTRÓNICA</em></div>
   <ul class="nav-links">
@@ -442,11 +422,8 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
   </ul>
 </nav>
 
-<!-- PERFIL (antes Inicio) -->
 <section id="inicio" class="page-section" style="padding-top:80px;">
   <div style="max-width:1280px; margin:0 auto; padding:2rem 6% 5rem;">
-
-    <!-- Nombre + Foto -->
     <div class="inicio-top">
       <div>
         <h1 class="hero-h1">
@@ -463,7 +440,6 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
       </div>
     </div>
 
-    <!-- Sobre Mí -->
     <div class="sobre-mi-wrap" style="text-align:center;">
       <div class="section-eyebrow" style="font-size:1.5rem; letter-spacing:0.15em;">Sobre Mí</div>
       <div class="sobre-mi-texto" style="text-align:center;margin:auto;">
@@ -473,7 +449,6 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
       </div>
     </div>
 
-    <!-- Frase -->
     <div class="frase-wrap" style="display:flex; justify-content:center;">
       <blockquote class="hero-quote">
         <span class="hero-quote-text">"La ingeniería es la profesión más cercana a hacer magia."</span>
@@ -481,7 +456,6 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
       </blockquote>
     </div>
 
-    <!-- Circuito animado SVG -->
     <div class="circuito-wrap">
       <svg viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
         <defs>
@@ -515,11 +489,9 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
         <path id="trace-path2" d="M50,50 L150,50 L150,130 L350,130 L450,130 L450,50 L650,50 L750,50 L750,130 L850,130 L850,50 L50,50" fill="none"/>
       </svg>
     </div>
-
   </div>
 </section>
 
-<!-- EQUIPO -->
 <div class="section-divider"></div>
 <div class="section-wrap-default">
 <section id="equipo" class="page-section section" style="display:none;">
@@ -556,38 +528,36 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
     </div>
   </div>
 
-  <!-- APORTE PERSONAL — antes sección Perfil -->
- <div class="aporte-divider">
-  <div class="section-eyebrow">Evaluación de Competencias</div>
-  <h2 class="section-title">Rol Analítico y <em>Aporte Personal</em></h2>
-  <div class="perfil-layout" style="align-items:start;">
-    <div class="perfil-text">
-      <p>Mi participación en el equipo no se limitó a los cálculos. Estuve presente en el montaje físico de los circuitos, apoyé activamente las pruebas en el banco de laboratorio y contribuí en la verificación de que los resultados experimentales concordaran con lo diseñado.</p>
-      <p>Cuando los valores medidos en el osciloscopio diferían de los calculados, era parte del proceso de diagnóstico para identificar la causa — ya fuera una tolerancia de componente, un error de montaje o una condición de alimentación incorrecta, como ocurrió en el Proyecto 1 con la alimentación monopolar del LM324.</p>
-      <p>Creo que mi valor dentro del equipo estuvo en ser un puente entre la teoría y la práctica: no solo calcular, sino entender por qué los números decían lo que decían y traducirlo en acciones concretas sobre el circuito real.</p>
-      <img src="imagenes/ejemp.jpg" alt="Circuito ECG" style="width:100%; border-radius:4px; margin-top:2rem; display:block;">
-    </div>
-    <div>
-      <div class="competencia-card">
-        <h4>Liderazgo — Proyecto 3 y 4</h4>
-        <p>Asumí el liderazgo en el Proyecto 3 (Tutorial PCB) y el Proyecto 4 (Sintetizador ECG). En ambos tomé las decisiones de diseño, definí la dirección técnica y coordiné al equipo para que cada parte encajara en el resultado final.</p>
+  <div class="aporte-divider">
+    <div class="section-eyebrow">Evaluación de Competencias</div>
+    <h2 class="section-title">Rol Analítico y <em>Aporte Personal</em></h2>
+    <div class="perfil-layout" style="align-items:start;">
+      <div class="perfil-text">
+        <p>Mi participación en el equipo no se limitó a los cálculos. Estuve presente en el montaje físico de los circuitos, apoyé activamente las pruebas en el banco de laboratorio y contribuí en la verificación de que los resultados experimentales concordaran con lo diseñado.</p>
+        <p>Cuando los valores medidos en el osciloscopio diferían de los calculados, era parte del proceso de diagnóstico para identificar la causa — ya fuera una tolerancia de componente, un error de montaje o una condición de alimentación incorrecta, como ocurrió en el Proyecto 1 con la alimentación monopolar del LM324.</p>
+        <p>Creo que mi valor dentro del equipo estuvo en ser un puente entre la teoría y la práctica: no solo calcular, sino entender por qué los números decían lo que decían y traducirlo en acciones concretas sobre el circuito real.</p>
+        <p>A continuación se puede ver un ejemplo de un montaje en protoboard que realicé para el proyecto 5 de Sintetizador ECG para generar las 5 subondas.</p>
+        <img src="imagenes/ejemp.jpg" alt="Circuito ECG" style="width:100%; border-radius:4px; margin-top:2rem; display:block;">
       </div>
-      <div class="competencia-card">
-        <h4>Liderazgo Técnico — Proyecto 2: Raster Scan</h4>
-        <p>Asumí el rol de <strong>Líder del Proyecto</strong> en el sistema de conteo de colonias bacterianas. Coordiné el flujo de trabajo entre los cinco roles del equipo, garantizando coherencia entre los cálculos de diseño y la implementación física. El prototipo alcanzó operación funcional completa con un presupuesto de $18.70 USD.</p>
-      </div>
-      <div class="competencia-card">
-        <h4>Implementación y Pruebas en Laboratorio</h4>
-        <p>Más allá del diseño, participé activamente en el montaje físico de los circuitos y en las pruebas de laboratorio. Mi rol fue asegurarme de que cada circuito entregara exactamente lo esperado — midiendo, comparando con los valores teóricos y verificando que todo funcionara correctamente antes de dar el proyecto por finalizado.</p>
+      <div>
+        <div class="competencia-card">
+          <h4>Liderazgo — Proyecto 3 y 4</h4>
+          <p>Asumí el liderazgo en el Proyecto 3 (Tutorial PCB) y el Proyecto 4 (Sintetizador ECG). En ambos tomé las decisiones de diseño, definí la dirección técnica y coordiné al equipo para que cada parte encajara en el resultado final.</p>
+        </div>
+        <div class="competencia-card">
+          <h4>Liderazgo Técnico — Proyecto 2: Raster Scan</h4>
+          <p>Asumí el rol de <strong>Líder del Proyecto</strong> en el sistema de conteo de colonias bacterianas. Coordiné el flujo de trabajo entre los cinco roles del equipo, garantizando coherencia entre los cálculos de diseño y la implementación física. El prototipo alcanzó operación funcional completa con un presupuesto de $18.70 USD.</p>
+        </div>
+        <div class="competencia-card">
+          <h4>Implementación y Pruebas en Laboratorio</h4>
+          <p>Más allá del diseño, participé activamente en el montaje físico de los circuitos y en las pruebas de laboratorio. Mi rol fue asegurarme de que cada circuito entregara exactamente lo esperado — midiendo, comparando con los valores teóricos y verificando que todo funcionara correctamente antes de dar el proyecto por finalizado.</p>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
 </section>
 </div>
 
-<!-- PROYECTOS -->
 <div class="section-divider"></div>
 <div class="section-wrap-alt">
 <section id="proyectos-header" class="page-section section" style="display:none; padding-bottom:1rem;">
@@ -595,7 +565,6 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
   <h2 class="section-title">Proyectos <em>Técnicos</em></h2>
 </section>
 
-<!-- PROYECTO 1 -->
 <div class="pcard-outer page-section" style="display:none; max-width:1280px; margin:0 auto; padding:0 6%;">
 <div class="pcard">
   <div class="pcard-header">
@@ -633,14 +602,11 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
         </div>
       </div>
     </div>
-
     <div class="divider" style="margin:2rem 0;"></div>
-
     <div class="img-feature" onclick="lb(this)" style="max-width:700px;">
       <img src="imagenes/sallen-key.png" alt="Simulación Sallen-Key en Multisim">
       <div class="img-caption">Fig 1.1 — Simulación del circuito Sallen-Key en NI Multisim</div>
     </div>
-
     <div class="issue-wrap" style="margin-top:2rem;">
       <div class="issue-row-2">
         <div class="issue-content">
@@ -657,7 +623,6 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
 </div>
 </div>
 
-<!-- PROYECTO 2 -->
 <div class="pcard-outer page-section" style="display:none; max-width:1280px; margin:2rem auto 0; padding:0 6%;">
 <div class="pcard">
   <div class="pcard-header">
@@ -684,12 +649,10 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
         </div>
       </div>
     </div>
-
     <div class="img-feature" onclick="lb(this)" style="max-width:700px; margin-bottom:2rem;">
       <img src="imagenes/osciloscopio_p2_png.png" alt="Señal osciloscopio Proyecto 2">
       <div class="img-caption">Fig 2.3 — Señal de salida capturada en osciloscopio RIGOL</div>
     </div>
-
     <div class="etapas-grid">
       <div class="etapa-card"><div class="etapa-num">01</div><div class="etapa-title">Transimpedancia</div><p class="etapa-desc">Convierte corriente del fotodiodo (µA) en tensión: V_out = −I_photo · R_f.</p></div>
       <div class="etapa-card"><div class="etapa-num">02</div><div class="etapa-title">Filtro Pasa-Bajas</div><p class="etapa-desc">Elimina ruido de red a 60 Hz. f_c = 20 Hz, R=10kΩ, C≈1µF.</p></div>
@@ -701,7 +664,6 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
 </div>
 </div>
 
-<!-- PROYECTO 3 -->
 <div class="pcard-outer page-section" style="display:none; max-width:1280px; margin:2rem auto 0; padding:0 6%;">
 <div class="pcard">
   <div class="pcard-header">
@@ -754,7 +716,6 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
 </div>
 </div>
 
-<!-- PROYECTO 4 -->
 <div class="pcard-outer page-section" style="display:none; max-width:1280px; margin:2rem auto 0; padding:0 6%;">
 <div class="pcard">
   <div class="pcard-header">
@@ -781,14 +742,12 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
         </div>
       </div>
     </div>
-
     <div class="eq-box" style="max-width:700px; margin-bottom:2.5rem;">
       <div class="eq-label">Ecuación General de Síntesis Analógica del ECG</div>
       <div class="eq-formula" style="text-align:center; font-size:1.2rem;">
         v_ECG(t) = <span class="hl">Σ</span> A_i · exp( <span class="hl-o">−(t − t0_i)²</span> / <span class="hl">(2σ_i²)</span> )
       </div>
     </div>
-
     <div class="subonda-grid">
       <div class="subonda-card" style="border-left:3px solid var(--amber);">
         <h6>Onda P — Activación Auricular</h6>
@@ -834,9 +793,8 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
   </div>
 </div>
 </div>
-</div><!-- /section-wrap proyectos -->
+</div>
 
-<!-- CONTACTO -->
 <div class="section-divider"></div>
 <div class="section-wrap-default">
 <section id="contacto" class="page-section section" style="display:none;">
