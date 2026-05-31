@@ -8,17 +8,24 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #0d0a07;
-    --bg-card: #15110c;
-    --bg-raised: #1e1710;
+:root {
+    /* Fondos claros y limpios */
+    --bg: #fdfbf9; 
+    --bg-card: #ffffff;
+    --bg-raised: #f4f1ed;
+    
+    /* Acentos vibrantes */
     --amber: #f59e0b;
     --amber-dim: #d97706;
-    --orange: #fb923c;
-    --warm-white: #fef3c7;
-    --muted: #a8998a;
-    --border: rgba(245, 158, 11, 0.12);
-    --border-strong: rgba(245, 158, 11, 0.3);
+    --orange: #f97316; 
+    
+    /* Textos oscuros para máxima legibilidad (mantenemos los nombres de tus variables originales para no romper el HTML) */
+    --warm-white: #1c1917; /* Ahora es un gris casi negro para los títulos y textos principales */
+    --muted: #57534e; /* Gris medio para textos secundarios */
+    
+    /* Bordes sutiles y fuertes */
+    --border: #e7e5e4;
+    --border-strong: rgba(245, 158, 11, 0.6);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -39,7 +46,7 @@
     position: fixed; top: 0; width: 100%; z-index: 999;
     display: flex; justify-content: space-between; align-items: center;
     padding: 1.2rem 6%;
-    background: rgba(13, 10, 7, 0.9);
+    background: rgba(253, 251, 249, 0.95); /* Fondo claro translúcido */
     backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border);
   }
