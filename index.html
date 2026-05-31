@@ -399,7 +399,7 @@ function showSection(id) {
   document.querySelectorAll('.page-section').forEach(el => el.style.display = 'none');
   if (id === 'proyectos') {
     document.getElementById('proyectos-header').style.display = '';
-    document.querySelectorAll('.pcard-outer').forEach(el => { el.style.display = ''; });
+    document.getElementById('proyectos-galeria').style.display = '';
   } else {
     var t = document.getElementById(id);
     if (t) { t.style.display = ''; t.style.animation='none'; t.offsetHeight; t.style.animation=''; }
@@ -407,6 +407,18 @@ function showSection(id) {
   document.querySelectorAll('.nav-btn').forEach(a => a.classList.remove('active'));
   var btn = document.querySelector('[data-sec="'+id+'"]');
   if (btn) btn.classList.add('active');
+  window.scrollTo(0,0);
+}
+function abrirProyecto(n) {
+  document.getElementById('proyectos-galeria').style.display = 'none';
+  document.getElementById('proyectos-header').style.display = 'none';
+  document.getElementById('proyecto-detalle-'+n).style.display = '';
+  window.scrollTo(0,0);
+}
+function volverGaleria() {
+  document.querySelectorAll('.proyecto-detalle').forEach(el => el.style.display = 'none');
+  document.getElementById('proyectos-header').style.display = '';
+  document.getElementById('proyectos-galeria').style.display = '';
   window.scrollTo(0,0);
 }
 document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
@@ -588,234 +600,308 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
   <h2 class="section-title">Proyectos <em>Técnicos</em></h2>
 </section>
 
-<div class="pcard-outer page-section" style="display:none; max-width:1280px; margin:0 auto; padding:0 6%;">
-<div class="pcard">
-  <div class="pcard-header">
-    <div class="ptags">
-      <span class="ptag ptag-amber">Libro Intergrupal</span>
-      <span class="ptag ptag-amber">Autoría 100% Individual</span>
-      <span class="ptag ptag-muted">Validado Experimentalmente</span>
-    </div>
-    <div class="pcard-title">Proyecto 1: Filtro Activo Pasa-Altas — Topología Sallen-Key</div>
-    <p class="pcard-intro">Desarrollo completo del módulo Sallen-Key de segundo orden para el compendio técnico intergrupal. Cubrió desde la fundamentación teórica y la deducción analítica de la función de transferencia, hasta el dimensionamiento paramétrico, simulación en Multisim y validación experimental con osciloscopio RIGOL.</p>
-  </div>
-  <div class="pcard-body">
-    <div class="sk-grid">
-      <div>
-        <p class="sk-intro">La arquitectura Sallen-Key prescinde de inductores físicos reemplazándolos con redes RC y un amplificador operacional. Para el filtro <strong>pasa-altas de segundo orden</strong>, Z₁ y Z₂ son capacitores y Z₃, Z₄ son resistencias.</p>
-        <div class="eq-box">
-          <div class="eq-label">Función de Transferencia — Sallen-Key Pasa-Altas</div>
-          <div class="eq-formula">H(s) = <span class="hl">A · s²</span> / [ s² + s·(<span class="hl-o">1/R₂C₁ + 1/R₂C₂</span>) + <span class="hl">1/(C₁C₂R₁R₂)</span> ]</div>
-        </div>
-        <div class="eq-box">
-          <div class="eq-label">Frecuencia de Corte (R₁=R₂=R, C₁=C₂=C)</div>
-          <div class="eq-formula">f_c = <span class="hl">1 / (2π·R·C)</span> = 1/(2π × 3.18kΩ × 1nF) ≈ <span class="hl">50 kHz</span></div>
+<!-- GALERÍA DE PROYECTOS -->
+<div id="proyectos-galeria" class="page-section" style="display:none; max-width:1280px; margin:0 auto; padding:0 6% 5rem;">
+  <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem;">
+
+    <div onclick="abrirProyecto(1)" style="background:var(--bg-card); border:1px solid var(--border); border-radius:8px; overflow:hidden; cursor:pointer; transition:transform 0.2s,border-color 0.2s;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='var(--amber)'" onmouseout="this.style.transform='translateY(0)';this.style.borderColor='var(--border)'">
+      <div style="height:200px; background:linear-gradient(135deg,#1a1a2e,#16213e); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
+        <div style="position:absolute; inset:0; background:url('imagenes/sallen-key.png') center/cover; opacity:0.35;"></div>
+        <div style="position:relative; text-align:center;">
+          <div style="font-size:3rem; font-weight:800; color:var(--amber); font-family:'Syne',sans-serif; line-height:1;">P1</div>
+          <div style="font-size:0.7rem; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:0.1em; margin-top:4px;">Filtro Activo</div>
         </div>
       </div>
-      <div>
+      <div style="padding:1.5rem;">
+        <div style="font-size:0.68rem; color:var(--amber); text-transform:uppercase; letter-spacing:0.1em; font-family:'Syne',sans-serif; margin-bottom:0.5rem;">Sallen-Key · Libro Intergrupal</div>
+        <div style="font-size:1.1rem; font-weight:700; color:var(--warm-white); margin-bottom:0.5rem;">Filtro Activo Pasa-Altas</div>
+        <div style="font-size:0.88rem; color:var(--muted); line-height:1.5;">Topología Sallen-Key de 2° orden. Diseño, simulación en Multisim y validación experimental.</div>
+      </div>
+    </div>
+
+    <div onclick="abrirProyecto(2)" style="background:var(--bg-card); border:1px solid var(--border); border-radius:8px; overflow:hidden; cursor:pointer; transition:transform 0.2s,border-color 0.2s;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='var(--amber)'" onmouseout="this.style.transform='translateY(0)';this.style.borderColor='var(--border)'">
+      <div style="height:200px; background:linear-gradient(135deg,#0f2027,#203a43); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
+        <div style="position:absolute; inset:0; background:url('imagenes/circuittoPROTOBOARD2.png') center/cover; opacity:0.4;"></div>
+        <div style="position:relative; text-align:center;">
+          <div style="font-size:3rem; font-weight:800; color:var(--amber); font-family:'Syne',sans-serif; line-height:1;">P2</div>
+          <div style="font-size:0.7rem; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:0.1em; margin-top:4px;">Raster Scan</div>
+        </div>
+      </div>
+      <div style="padding:1.5rem;">
+        <div style="font-size:0.68rem; color:var(--amber); text-transform:uppercase; letter-spacing:0.1em; font-family:'Syne',sans-serif; margin-bottom:0.5rem;">Líder · Sistema Óptico Analógico</div>
+        <div style="font-size:1.1rem; font-weight:700; color:var(--warm-white); margin-bottom:0.5rem;">Sistema Raster Scan</div>
+        <div style="font-size:0.88rem; color:var(--muted); line-height:1.5;">Conteo analógico de colonias bacterianas. Solución de $18.70 USD vs equipos de $2,000 USD.</div>
+      </div>
+    </div>
+
+    <div onclick="abrirProyecto(3)" style="background:var(--bg-card); border:1px solid var(--border); border-radius:8px; overflow:hidden; cursor:pointer; transition:transform 0.2s,border-color 0.2s;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='var(--amber)'" onmouseout="this.style.transform='translateY(0)';this.style.borderColor='var(--border)'">
+      <div style="height:200px; background:linear-gradient(135deg,#1a0533,#2d1b69); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
+        <div style="position:absolute; inset:0; background:url('imagenes/3Dproyecto3.png') center/cover; opacity:0.4;"></div>
+        <div style="position:relative; text-align:center;">
+          <div style="font-size:3rem; font-weight:800; color:var(--amber); font-family:'Syne',sans-serif; line-height:1;">P3</div>
+          <div style="font-size:0.7rem; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:0.1em; margin-top:4px;">Diseño PCB</div>
+        </div>
+      </div>
+      <div style="padding:1.5rem;">
+        <div style="font-size:0.68rem; color:var(--amber); text-transform:uppercase; letter-spacing:0.1em; font-family:'Syne',sans-serif; margin-bottom:0.5rem;">Liderazgo CAD · EasyEDA · JLCPCB</div>
+        <div style="font-size:1.1rem; font-weight:700; color:var(--warm-white); margin-bottom:0.5rem;">Diseño PCB y Manufactura Digital</div>
+        <div style="font-size:0.88rem; color:var(--muted); line-height:1.5;">Layout con reglas DRC, vista 3D y archivos Gerber para fabricación industrial.</div>
+      </div>
+    </div>
+
+    <div onclick="abrirProyecto(4)" style="background:var(--bg-card); border:1px solid var(--border); border-radius:8px; overflow:hidden; cursor:pointer; transition:transform 0.2s,border-color 0.2s;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='var(--amber)'" onmouseout="this.style.transform='translateY(0)';this.style.borderColor='var(--border)'">
+      <div style="height:200px; background:linear-gradient(135deg,#0d1b2a,#1b4332); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
+        <div style="position:absolute; inset:0; background:url('imagenes/EsquemaP4.png') center/cover; opacity:0.35;"></div>
+        <div style="position:relative; text-align:center;">
+          <div style="font-size:3rem; font-weight:800; color:var(--amber); font-family:'Syne',sans-serif; line-height:1;">P4</div>
+          <div style="font-size:0.7rem; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:0.1em; margin-top:4px;">Sintetizador ECG</div>
+        </div>
+      </div>
+      <div style="padding:1.5rem;">
+        <div style="font-size:0.68rem; color:var(--amber); text-transform:uppercase; letter-spacing:0.1em; font-family:'Syne',sans-serif; margin-bottom:0.5rem;">Síntesis Gaussiana · Ingeniería Biomédica</div>
+        <div style="font-size:1.1rem; font-weight:700; color:var(--warm-white); margin-bottom:0.5rem;">Sintetizador Analógico ECG</div>
+        <div style="font-size:0.88rem; color:var(--muted); line-height:1.5;">Reproducción de señal cardíaca PQRST mediante superposición de funciones gaussianas.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- DETALLE PROYECTO 1 -->
+<div id="proyecto-detalle-1" class="proyecto-detalle page-section" style="display:none; max-width:1280px; margin:0 auto; padding:0 6% 5rem;">
+  <button onclick="volverGaleria()" style="display:inline-flex;align-items:center;gap:0.5rem;background:var(--bg-raised);border:1px solid var(--border);color:var(--muted);padding:0.6rem 1.2rem;border-radius:4px;cursor:pointer;font-size:0.85rem;margin-bottom:2rem;transition:border-color 0.2s,color 0.2s;" onmouseover="this.style.borderColor='var(--amber)';this.style.color='var(--amber)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">← Volver a Proyectos</button>
+  <div class="pcard">
+    <div class="pcard-header">
+      <div class="ptags">
+        <span class="ptag ptag-amber">Libro Intergrupal</span>
+        <span class="ptag ptag-amber">Autoría 100% Individual</span>
+        <span class="ptag ptag-muted">Validado Experimentalmente</span>
+      </div>
+      <div class="pcard-title">Proyecto 1: Filtro Activo Pasa-Altas — Topología Sallen-Key</div>
+      <p class="pcard-intro">Desarrollo completo del módulo Sallen-Key de segundo orden para el compendio técnico intergrupal. Cubrió desde la fundamentación teórica y la deducción analítica de la función de transferencia, hasta el dimensionamiento paramétrico, simulación en Multisim y validación experimental con osciloscopio RIGOL.</p>
+    </div>
+    <div class="pcard-body">
+      <div class="sk-grid">
+        <div>
+          <p class="sk-intro">La arquitectura Sallen-Key prescinde de inductores físicos reemplazándolos con redes RC y un amplificador operacional. Para el filtro <strong>pasa-altas de segundo orden</strong>, Z₁ y Z₂ son capacitores y Z₃, Z₄ son resistencias.</p>
+          <div class="eq-box">
+            <div class="eq-label">Función de Transferencia — Sallen-Key Pasa-Altas</div>
+            <div class="eq-formula">H(s) = <span class="hl">A · s²</span> / [ s² + s·(<span class="hl-o">1/R₂C₁ + 1/R₂C₂</span>) + <span class="hl">1/(C₁C₂R₁R₂)</span> ]</div>
+          </div>
+          <div class="eq-box">
+            <div class="eq-label">Frecuencia de Corte (R₁=R₂=R, C₁=C₂=C)</div>
+            <div class="eq-formula">f_c = <span class="hl">1 / (2π·R·C)</span> = 1/(2π × 3.18kΩ × 1nF) ≈ <span class="hl">50 kHz</span></div>
+          </div>
+        </div>
+        <div>
+          <div class="data-box accent-top">
+            <h4>Parámetros del Diseño Final</h4>
+            <div class="data-row"><span class="label">Tipo de filtro</span><span class="val">Pasa-Altas 2° orden</span></div>
+            <div class="data-row"><span class="label">Op-Amp</span><span class="val">LM324N (DIP-8)</span></div>
+            <div class="data-row"><span class="label">C₁ = C₂</span><span class="val">1 nF</span></div>
+            <div class="data-row"><span class="label">R₁ = R₂</span><span class="val">3.18 kΩ → 3.3 kΩ</span></div>
+            <div class="data-row"><span class="label">f_c diseñada</span><span class="val">50 kHz</span></div>
+            <div class="data-row"><span class="label">Factor Q</span><span class="val">0.5 (Butterworth)</span></div>
+            <div class="data-row"><span class="label">Alimentación</span><span class="val">±15 V (bipolar)</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="divider" style="margin:2rem 0;"></div>
+      <div class="img-feature" onclick="lb(this)" style="max-width:700px;">
+        <img src="imagenes/sallen-key.png" alt="Simulación Sallen-Key en Multisim">
+        <div class="img-caption">Fig 1.1 — Simulación del circuito Sallen-Key en NI Multisim</div>
+      </div>
+      <div class="issue-wrap" style="margin-top:2rem;">
+        <div class="issue-row-2">
+          <div class="issue-content">
+            <h5>Troubleshooting: Alimentación Monopolar</h5>
+            <p>El LM324 alimentado con fuente monopolar (+10V/GND) no podía reproducir la semicitación negativa de la señal, aparentando una ganancia de 0.5 en lugar de la ganancia unitaria de diseño.</p>
+          </div>
+          <div class="issue-sol">
+            <strong>Corrección Aplicada</strong>
+            <span>Cambio a alimentación bipolar ±15 V. Inmediatamente la señal recuperó la ganancia K = 1 con la f_c definida teóricamente.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DETALLE PROYECTO 2 -->
+<div id="proyecto-detalle-2" class="proyecto-detalle page-section" style="display:none; max-width:1280px; margin:0 auto; padding:0 6% 5rem;">
+  <button onclick="volverGaleria()" style="display:inline-flex;align-items:center;gap:0.5rem;background:var(--bg-raised);border:1px solid var(--border);color:var(--muted);padding:0.6rem 1.2rem;border-radius:4px;cursor:pointer;font-size:0.85rem;margin-bottom:2rem;transition:border-color 0.2s,color 0.2s;" onmouseover="this.style.borderColor='var(--amber)';this.style.color='var(--amber)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">← Volver a Proyectos</button>
+  <div class="pcard">
+    <div class="pcard-header">
+      <div class="ptags">
+        <span class="ptag ptag-amber">Líder de Proyecto</span>
+        <span class="ptag ptag-orange">Sistema Óptico Analógico</span>
+        <span class="ptag ptag-muted">Presupuesto $18.70 USD</span>
+      </div>
+      <div class="pcard-title">Proyecto 2: Sistema Raster Scan — Conteo Analógico de Colonias</div>
+      <p class="pcard-intro">Como <strong>Líder del Proyecto</strong>, coordiné el desarrollo de un sistema analógico de barrido óptico para la detección y conteo autónomo de colonias bacterianas en cajas de Petri. Meta: resolver el mismo problema que equipos de $2,000 USD por menos de $20 USD con electrónica analógica pura.</p>
+    </div>
+    <div class="pcard-body">
+      <div class="sk-grid" style="margin-bottom:2rem;">
+        <div>
+          <div class="img-feature" onclick="lb(this)">
+            <img src="imagenes/circuito_p2_png.png" alt="Diagrama de bloques Proyecto 2">
+            <div class="img-caption">Fig 2.1 — Diagrama de bloques del sistema Raster Scan</div>
+          </div>
+        </div>
+        <div>
+          <div class="img-feature" onclick="lb(this)">
+            <img src="imagenes/circuittoPROTOBOARD2.png" alt="Protoboard Proyecto 2">
+            <div class="img-caption">Fig 2.2 — Implementación física en protoboard</div>
+          </div>
+        </div>
+      </div>
+      <div class="img-feature" onclick="lb(this)" style="max-width:700px; margin-bottom:2rem;">
+        <img src="imagenes/osciloscopio_p2_png.png" alt="Señal osciloscopio Proyecto 2">
+        <div class="img-caption">Fig 2.3 — Señal de salida capturada en osciloscopio RIGOL</div>
+      </div>
+      <div class="etapas-grid">
+        <div class="etapa-card"><div class="etapa-num">01</div><div class="etapa-title">Transimpedancia</div><p class="etapa-desc">Convierte corriente del fotodiodo (µA) en tensión: V_out = −I_photo · R_f.</p></div>
+        <div class="etapa-card"><div class="etapa-num">02</div><div class="etapa-title">Filtro Pasa-Bajas</div><p class="etapa-desc">Elimina ruido de red a 60 Hz. f_c = 20 Hz, R=10kΩ, C≈1µF.</p></div>
+        <div class="etapa-card"><div class="etapa-num">03</div><div class="etapa-title">Amplificador ×100</div><p class="etapa-desc">LM358 no inversor: Av = 1 + 1MΩ/10kΩ = 101. Levanta señal sobre piso de ruido.</p></div>
+        <div class="etapa-card"><div class="etapa-num">04</div><div class="etapa-title">Derivador Práctico</div><p class="etapa-desc">Resalta bordes de colonia: V_out = −RC·dV/dt. RC = 10kΩ × 1µF = 0.01 s.</p></div>
+        <div class="etapa-card"><div class="etapa-num">05</div><div class="etapa-title">Schmitt Trigger + NE555</div><p class="etapa-desc">Digitaliza sin rebotes. Monoestable: t_p = 1.1 × 100kΩ × 2µF = 0.22 s.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DETALLE PROYECTO 3 -->
+<div id="proyecto-detalle-3" class="proyecto-detalle page-section" style="display:none; max-width:1280px; margin:0 auto; padding:0 6% 5rem;">
+  <button onclick="volverGaleria()" style="display:inline-flex;align-items:center;gap:0.5rem;background:var(--bg-raised);border:1px solid var(--border);color:var(--muted);padding:0.6rem 1.2rem;border-radius:4px;cursor:pointer;font-size:0.85rem;margin-bottom:2rem;transition:border-color 0.2s,color 0.2s;" onmouseover="this.style.borderColor='var(--amber)';this.style.color='var(--amber)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">← Volver a Proyectos</button>
+  <div class="pcard">
+    <div class="pcard-header">
+      <div class="ptags">
+        <span class="ptag ptag-amber">Liderazgo CAD</span>
+        <span class="ptag ptag-muted">Soporte DFM</span>
+        <span class="ptag ptag-orange">Manufactura Industrial</span>
+      </div>
+      <div class="pcard-title">Proyecto 3: Diseño de PCB y Manufactura Digital en EasyEDA</div>
+      <p class="pcard-intro">Salto desde el protoboard a la manufactura industrial. Lideré el diseño CAD del layout físico aplicando criterios de DFM y verificación DRC para garantizar fabricabilidad real con JLCPCB por menos de $20 USD.</p>
+    </div>
+    <div class="pcard-body">
+      <div class="sk-grid" style="margin-bottom:2rem;">
+        <div>
+          <div class="img-feature" onclick="lb(this)">
+            <img src="imagenes/esquema_p3_png.png" alt="Layout PCB EasyEDA">
+            <div class="img-caption">Fig 3.1 — Layout PCB en EasyEDA con reglas DRC</div>
+          </div>
+        </div>
+        <div>
+          <div class="img-feature" onclick="lb(this)">
+            <img src="imagenes/3Dproyecto3.png" alt="Vista 3D PCB">
+            <div class="img-caption">Fig 3.2 — Vista 3D de la placa diseñada</div>
+          </div>
+        </div>
+      </div>
+      <div class="img-feature" onclick="lb(this)" style="max-width:600px; margin-bottom:2rem;">
+        <img src="imagenes/GenerarGerperProyecto3.png" alt="Generación Gerber JLCPCB">
+        <div class="img-caption">Fig 3.3 — Generación de archivos Gerber para JLCPCB ($4 USD / 5 placas)</div>
+      </div>
+      <div class="data-grid">
         <div class="data-box accent-top">
-          <h4>Parámetros del Diseño Final</h4>
-          <div class="data-row"><span class="label">Tipo de filtro</span><span class="val">Pasa-Altas 2° orden</span></div>
-          <div class="data-row"><span class="label">Op-Amp</span><span class="val">LM324N (DIP-8)</span></div>
-          <div class="data-row"><span class="label">C₁ = C₂</span><span class="val">1 nF</span></div>
-          <div class="data-row"><span class="label">R₁ = R₂</span><span class="val">3.18 kΩ → 3.3 kΩ</span></div>
-          <div class="data-row"><span class="label">f_c diseñada</span><span class="val">50 kHz</span></div>
-          <div class="data-row"><span class="label">Factor Q</span><span class="val">0.5 (Butterworth)</span></div>
-          <div class="data-row"><span class="label">Alimentación</span><span class="val">±15 V (bipolar)</span></div>
+          <h4>Reglas DRC Implementadas</h4>
+          <div class="data-row"><span class="label">Ancho pista señal</span><span class="val">10 mils</span></div>
+          <div class="data-row"><span class="label">Ancho pistas VCC/GND</span><span class="val">20 mils</span></div>
+          <div class="data-row"><span class="label">Clearance mínimo</span><span class="val">6 mils</span></div>
+          <div class="data-row"><span class="label">Ángulos enrutamiento</span><span class="val">45°</span></div>
+          <div class="data-row"><span class="label">DRC Errors al finalizar</span><span class="val">0 errores ✓</span></div>
         </div>
-      </div>
-    </div>
-    <div class="divider" style="margin:2rem 0;"></div>
-    <div class="img-feature" onclick="lb(this)" style="max-width:700px;">
-      <img src="imagenes/sallen-key.png" alt="Simulación Sallen-Key en Multisim">
-      <div class="img-caption">Fig 1.1 — Simulación del circuito Sallen-Key en NI Multisim</div>
-    </div>
-    <div class="issue-wrap" style="margin-top:2rem;">
-      <div class="issue-row-2">
-        <div class="issue-content">
-          <h5>Troubleshooting: Alimentación Monopolar</h5>
-          <p>El LM324 alimentado con fuente monopolar (+10V/GND) no podía reproducir la semicitación negativa de la señal, aparentando una ganancia de 0.5 en lugar de la ganancia unitaria de diseño.</p>
-        </div>
-        <div class="issue-sol">
-          <strong>Corrección Aplicada</strong>
-          <span>Cambio a alimentación bipolar ±15 V. Inmediatamente la señal recuperó la ganancia K = 1 con la f_c definida teóricamente.</span>
+        <div class="data-box" style="border-top:3px solid var(--orange);">
+          <h4>Parámetros de Fabricación</h4>
+          <div class="data-row"><span class="label">Dimensiones</span><span class="val">50 × 40 mm</span></div>
+          <div class="data-row"><span class="label">Capas de cobre</span><span class="val">2 (Top + Bottom)</span></div>
+          <div class="data-row"><span class="label">Material</span><span class="val">FR-4 1.6 mm</span></div>
+          <div class="data-row"><span class="label">Cantidad mínima</span><span class="val">5 unidades</span></div>
+          <div class="data-row"><span class="label">Costo fabricación</span><span class="val">$4 USD</span></div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>
 
-<div class="pcard-outer page-section" style="display:none; max-width:1280px; margin:2rem auto 0; padding:0 6%;">
-<div class="pcard">
-  <div class="pcard-header">
-    <div class="ptags">
-      <span class="ptag ptag-amber">Líder de Proyecto</span>
-      <span class="ptag ptag-orange">Sistema Óptico Analógico</span>
-      <span class="ptag ptag-muted">Presupuesto $18.70 USD</span>
+<!-- DETALLE PROYECTO 4 -->
+<div id="proyecto-detalle-4" class="proyecto-detalle page-section" style="display:none; max-width:1280px; margin:0 auto; padding:0 6% 5rem;">
+  <button onclick="volverGaleria()" style="display:inline-flex;align-items:center;gap:0.5rem;background:var(--bg-raised);border:1px solid var(--border);color:var(--muted);padding:0.6rem 1.2rem;border-radius:4px;cursor:pointer;font-size:0.85rem;margin-bottom:2rem;transition:border-color 0.2s,color 0.2s;" onmouseover="this.style.borderColor='var(--amber)';this.style.color='var(--amber)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">← Volver a Proyectos</button>
+  <div class="pcard">
+    <div class="pcard-header">
+      <div class="ptags">
+        <span class="ptag ptag-orange">Esfuerzo Colectivo Total</span>
+        <span class="ptag ptag-amber">Síntesis Gaussiana</span>
+        <span class="ptag ptag-muted">Ingeniería Biomédica</span>
+      </div>
+      <div class="pcard-title">Proyecto 4: Sintetizador Analógico de Señal ECG</div>
+      <p class="pcard-intro">El desafío más exigente del semestre. El equipo diseñó un sintetizador puramente analógico capaz de reproducir la actividad bioeléctrica cardíaca mediante superposición de funciones gaussianas, con control paramétrico para emular cardiopatías clínicas reales.</p>
     </div>
-    <div class="pcard-title">Proyecto 2: Sistema Raster Scan — Conteo Analógico de Colonias</div>
-    <p class="pcard-intro">Como <strong>Líder del Proyecto</strong>, coordiné el desarrollo de un sistema analógico de barrido óptico para la detección y conteo autónomo de colonias bacterianas en cajas de Petri. Meta: resolver el mismo problema que equipos de $2,000 USD por menos de $20 USD con electrónica analógica pura.</p>
-  </div>
-  <div class="pcard-body">
-    <div class="sk-grid" style="margin-bottom:2rem;">
-      <div>
-        <div class="img-feature" onclick="lb(this)">
-          <img src="imagenes/circuito_p2_png.png" alt="Diagrama de bloques Proyecto 2">
-          <div class="img-caption">Fig 2.1 — Diagrama de bloques del sistema Raster Scan</div>
+    <div class="pcard-body">
+      <div class="sk-grid" style="margin-bottom:2rem;">
+        <div>
+          <div class="img-feature" onclick="lb(this)">
+            <img src="imagenes/EsquemaP4.png" alt="Diagrama de bloques ECG">
+            <div class="img-caption">Fig 4.1 — Arquitectura del sintetizador ECG analógico</div>
+          </div>
+        </div>
+        <div>
+          <div class="img-feature" onclick="lb(this)">
+            <img src="imagenes/PQRTproyecto4.png" alt="Parámetros PQRST ECG">
+            <div class="img-caption">Fig 4.2 — Parámetros P, Q, R, S, T del ciclo cardíaco</div>
+          </div>
         </div>
       </div>
-      <div>
-        <div class="img-feature" onclick="lb(this)">
-          <img src="imagenes/circuittoPROTOBOARD2.png" alt="Protoboard Proyecto 2">
-          <div class="img-caption">Fig 2.2 — Implementación física en protoboard</div>
+      <div class="eq-box" style="max-width:700px; margin-bottom:2.5rem;">
+        <div class="eq-label">Ecuación General de Síntesis Analógica del ECG</div>
+        <div class="eq-formula" style="text-align:center; font-size:1.2rem;">
+          v_ECG(t) = <span class="hl">Σ</span> A_i · exp( <span class="hl-o">−(t − t0_i)²</span> / <span class="hl">(2σ_i²)</span> )
         </div>
       </div>
-    </div>
-    <div class="img-feature" onclick="lb(this)" style="max-width:700px; margin-bottom:2rem;">
-      <img src="imagenes/osciloscopio_p2_png.png" alt="Señal osciloscopio Proyecto 2">
-      <div class="img-caption">Fig 2.3 — Señal de salida capturada en osciloscopio RIGOL</div>
-    </div>
-    <div class="etapas-grid">
-      <div class="etapa-card"><div class="etapa-num">01</div><div class="etapa-title">Transimpedancia</div><p class="etapa-desc">Convierte corriente del fotodiodo (µA) en tensión: V_out = −I_photo · R_f.</p></div>
-      <div class="etapa-card"><div class="etapa-num">02</div><div class="etapa-title">Filtro Pasa-Bajas</div><p class="etapa-desc">Elimina ruido de red a 60 Hz. f_c = 20 Hz, R=10kΩ, C≈1µF.</p></div>
-      <div class="etapa-card"><div class="etapa-num">03</div><div class="etapa-title">Amplificador ×100</div><p class="etapa-desc">LM358 no inversor: Av = 1 + 1MΩ/10kΩ = 101. Levanta señal sobre piso de ruido.</p></div>
-      <div class="etapa-card"><div class="etapa-num">04</div><div class="etapa-title">Derivador Práctico</div><p class="etapa-desc">Resalta bordes de colonia: V_out = −RC·dV/dt. RC = 10kΩ × 1µF = 0.01 s.</p></div>
-      <div class="etapa-card"><div class="etapa-num">05</div><div class="etapa-title">Schmitt Trigger + NE555</div><p class="etapa-desc">Digitaliza sin rebotes. Monoestable: t_p = 1.1 × 100kΩ × 2µF = 0.22 s.</p></div>
-    </div>
-  </div>
-</div>
-</div>
-
-<div class="pcard-outer page-section" style="display:none; max-width:1280px; margin:2rem auto 0; padding:0 6%;">
-<div class="pcard">
-  <div class="pcard-header">
-    <div class="ptags">
-      <span class="ptag ptag-amber">Liderazgo CAD</span>
-      <span class="ptag ptag-muted">Soporte DFM</span>
-      <span class="ptag ptag-orange">Manufactura Industrial</span>
-    </div>
-    <div class="pcard-title">Proyecto 3: Diseño de PCB y Manufactura Digital en EasyEDA</div>
-    <p class="pcard-intro">Salto desde el protoboard a la manufactura industrial. Lideré el diseño CAD del layout físico aplicando criterios de DFM y verificación DRC para garantizar fabricabilidad real con JLCPCB por menos de $20 USD.</p>
-  </div>
-  <div class="pcard-body">
-    <div class="sk-grid" style="margin-bottom:2rem;">
-      <div>
-        <div class="img-feature" onclick="lb(this)">
-          <img src="imagenes/esquema_p3_png.png" alt="Layout PCB EasyEDA">
-          <div class="img-caption">Fig 3.1 — Layout PCB en EasyEDA con reglas DRC</div>
+      <div class="subonda-grid">
+        <div class="subonda-card" style="border-left:3px solid var(--amber);">
+          <h6>Onda P — Activación Auricular</h6>
+          <ul>
+            <li><strong>Polaridad:</strong> Positiva</li>
+            <li><strong>Amplitud:</strong> 0.10 – 0.25 mV</li>
+            <li><strong>Duración:</strong> 80 – 120 ms</li>
+          </ul>
         </div>
-      </div>
-      <div>
-        <div class="img-feature" onclick="lb(this)">
-          <img src="imagenes/3Dproyecto3.png" alt="Vista 3D PCB">
-          <div class="img-caption">Fig 3.2 — Vista 3D de la placa diseñada</div>
+        <div class="subonda-card">
+          <h6>Onda Q — Inicio Despolarización</h6>
+          <ul>
+            <li><strong>Polaridad:</strong> Negativa</li>
+            <li><strong>Amplitud:</strong> 0 – 0.10 mV</li>
+            <li><strong>Duración:</strong> 20 – 40 ms</li>
+          </ul>
         </div>
-      </div>
-    </div>
-    <div class="img-feature" onclick="lb(this)" style="max-width:600px; margin-bottom:2rem;">
-      <img src="imagenes/GenerarGerperProyecto3.png" alt="Generación Gerber JLCPCB">
-      <div class="img-caption">Fig 3.3 — Generación de archivos Gerber para JLCPCB ($4 USD / 5 placas)</div>
-    </div>
-    <div class="data-grid">
-      <div class="data-box accent-top">
-        <h4>Reglas DRC Implementadas</h4>
-        <div class="data-row"><span class="label">Ancho pista señal</span><span class="val">10 mils</span></div>
-        <div class="data-row"><span class="label">Ancho pistas VCC/GND</span><span class="val">20 mils</span></div>
-        <div class="data-row"><span class="label">Clearance mínimo</span><span class="val">6 mils</span></div>
-        <div class="data-row"><span class="label">Ángulos enrutamiento</span><span class="val">45°</span></div>
-        <div class="data-row"><span class="label">DRC Errors al finalizar</span><span class="val">0 errores ✓</span></div>
-      </div>
-      <div class="data-box" style="border-top:3px solid var(--orange);">
-        <h4>Parámetros de Fabricación</h4>
-        <div class="data-row"><span class="label">Dimensiones</span><span class="val">50 × 40 mm</span></div>
-        <div class="data-row"><span class="label">Capas de cobre</span><span class="val">2 (Top + Bottom)</span></div>
-        <div class="data-row"><span class="label">Material</span><span class="val">FR-4 1.6 mm</span></div>
-        <div class="data-row"><span class="label">Cantidad mínima</span><span class="val">5 unidades</span></div>
-        <div class="data-row"><span class="label">Costo fabricación</span><span class="val">$4 USD</span></div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-
-<div class="pcard-outer page-section" style="display:none; max-width:1280px; margin:2rem auto 0; padding:0 6%;">
-<div class="pcard">
-  <div class="pcard-header">
-    <div class="ptags">
-      <span class="ptag ptag-orange">Esfuerzo Colectivo Total</span>
-      <span class="ptag ptag-amber">Síntesis Gaussiana</span>
-      <span class="ptag ptag-muted">Ingeniería Biomédica</span>
-    </div>
-    <div class="pcard-title">Proyecto 4: Sintetizador Analógico de Señal ECG</div>
-    <p class="pcard-intro">El desafío más exigente del semestre. El equipo diseñó un sintetizador puramente analógico capaz de reproducir la actividad bioeléctrica cardíaca mediante superposición de funciones gaussianas, con control paramétrico para emular cardiopatías clínicas reales.</p>
-  </div>
-  <div class="pcard-body">
-    <div class="sk-grid" style="margin-bottom:2rem;">
-      <div>
-        <div class="img-feature" onclick="lb(this)">
-          <img src="imagenes/EsquemaP4.png" alt="Diagrama de bloques ECG">
-          <div class="img-caption">Fig 4.1 — Arquitectura del sintetizador ECG analógico</div>
+        <div class="subonda-card" style="border-left:3px solid var(--orange);">
+          <h6>Onda R — Pico Dominante</h6>
+          <ul>
+            <li><strong>Polaridad:</strong> Positiva</li>
+            <li><strong>Amplitud:</strong> 1.0 – 1.6 mV</li>
+            <li><strong>Duración:</strong> 20 – 40 ms</li>
+          </ul>
         </div>
-      </div>
-      <div>
-        <div class="img-feature" onclick="lb(this)">
-          <img src="imagenes/PQRTproyecto4.png" alt="Parámetros PQRST ECG">
-          <div class="img-caption">Fig 4.2 — Parámetros P, Q, R, S, T del ciclo cardíaco</div>
+        <div class="subonda-card">
+          <h6>Onda S — Fin Despolarización</h6>
+          <ul>
+            <li><strong>Polaridad:</strong> Negativa</li>
+            <li><strong>Amplitud:</strong> 0 – 0.30 mV</li>
+            <li><strong>Duración:</strong> 20 – 40 ms</li>
+          </ul>
+        </div>
+        <div class="subonda-card">
+          <h6>Onda T — Repolarización</h6>
+          <ul>
+            <li><strong>Polaridad:</strong> Positiva</li>
+            <li><strong>Amplitud:</strong> 0.10 – 0.50 mV</li>
+            <li><strong>Duración:</strong> 120 – 180 ms</li>
+          </ul>
         </div>
       </div>
     </div>
-    <div class="eq-box" style="max-width:700px; margin-bottom:2.5rem;">
-      <div class="eq-label">Ecuación General de Síntesis Analógica del ECG</div>
-      <div class="eq-formula" style="text-align:center; font-size:1.2rem;">
-        v_ECG(t) = <span class="hl">Σ</span> A_i · exp( <span class="hl-o">−(t − t0_i)²</span> / <span class="hl">(2σ_i²)</span> )
-      </div>
-    </div>
-    <div class="subonda-grid">
-      <div class="subonda-card" style="border-left:3px solid var(--amber);">
-        <h6>Onda P — Activación Auricular</h6>
-        <ul>
-          <li><strong>Polaridad:</strong> Positiva</li>
-          <li><strong>Amplitud:</strong> 0.10 – 0.25 mV</li>
-          <li><strong>Duración:</strong> 80 – 120 ms</li>
-        </ul>
-      </div>
-      <div class="subonda-card">
-        <h6>Onda Q — Inicio Despolarización</h6>
-        <ul>
-          <li><strong>Polaridad:</strong> Negativa</li>
-          <li><strong>Amplitud:</strong> 0 – 0.10 mV</li>
-          <li><strong>Duración:</strong> 20 – 40 ms</li>
-        </ul>
-      </div>
-      <div class="subonda-card" style="border-left:3px solid var(--orange);">
-        <h6>Onda R — Pico Dominante</h6>
-        <ul>
-          <li><strong>Polaridad:</strong> Positiva</li>
-          <li><strong>Amplitud:</strong> 1.0 – 1.6 mV</li>
-          <li><strong>Duración:</strong> 20 – 40 ms</li>
-        </ul>
-      </div>
-      <div class="subonda-card">
-        <h6>Onda S — Fin Despolarización</h6>
-        <ul>
-          <li><strong>Polaridad:</strong> Negativa</li>
-          <li><strong>Amplitud:</strong> 0 – 0.30 mV</li>
-          <li><strong>Duración:</strong> 20 – 40 ms</li>
-        </ul>
-      </div>
-      <div class="subonda-card">
-        <h6>Onda T — Repolarización</h6>
-        <ul>
-          <li><strong>Polaridad:</strong> Positiva</li>
-          <li><strong>Amplitud:</strong> 0.10 – 0.50 mV</li>
-          <li><strong>Duración:</strong> 120 – 180 ms</li>
-        </ul>
-      </div>
-    </div>
   </div>
-</div>
-</div>
 </div>
 
 <div class="section-divider"></div>
