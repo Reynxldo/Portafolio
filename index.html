@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reynaldo Medina | Electrónica Analógica III</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-chtml.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
@@ -769,11 +770,15 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
           <p class="sk-intro">La topología <strong>Sallen-Key</strong> permite implementar filtros activos de segundo orden (o más) prescindiendo de inductores físicos, reemplazándolos con redes RC y un amplificador operacional en configuración seguidor de voltaje. Para la configuración pasa-altas, Z₁ y Z₂ son capacitores mientras Z₃ y Z₄ son resistencias, en el caso de que se quisiera un filtro pasa-bajas se hace lo contrario con cada impedancia. Me encargué de todo el proceso: fundamentación teórica, cálculo de componentes, simulación en Multisim y montaje físico en protoboard con validación en osciloscopio RIGOL. Los resultados fueron los esperados, teniendo la frecuencia de corte esperada de 50 kHz y la ganancia esperada (Av=1).</p>
           <div class="eq-box">
             <div class="eq-label">Función de Transferencia — Sallen-Key Pasa-Altas</div>
-            <div class="eq-formula">H(s) = <span class="hl">A · s²</span> / [ s² + s·(<span class="hl-o">1/R₂C₁ + 1/R₂C₂</span>) + <span class="hl">1/(C₁C₂R₁R₂)</span> ]</div>
+            <div style="color:#ffffff; text-align:center;">
+              \[ H(s) = \frac{A \cdot s^2}{s^2 + s\left(\dfrac{1}{R_2C_1} + \dfrac{1}{R_2C_2}\right) + \dfrac{1}{C_1 C_2 R_1 R_2}} \]
+            </div>
           </div>
           <div class="eq-box">
             <div class="eq-label">Frecuencia de Corte (R₁=R₂=R, C₁=C₂=C)</div>
-            <div class="eq-formula">f_c = <span class="hl">1 / (2π·R·C)</span> = 1/(2π × 3.18kΩ × 1nF) ≈ <span class="hl">50 kHz</span></div>
+            <div style="color:#ffffff; text-align:center;">
+              \[ f_c = \frac{1}{2\pi R C} = \frac{1}{2\pi \times 3.18\,k\Omega \times 1\,nF} \approx 50\,kHz \]
+            </div>
           </div>
         </div>
         <div>
