@@ -803,22 +803,9 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
 
       <div class="divider" style="margin:2rem 0;"></div>
 
-      <div class="img-feature" onclick="lb(this)" style="max-width:700px;">
+      <div class="img-feature" onclick="lb(this)" style="max-width:700px; margin:0 auto;">
         <img src="imagenes/sallen-key.png" alt="Simulación Sallen-Key en Multisim">
         <div class="img-caption">Fig 1.1 — Simulación del circuito Sallen-Key en NI Multisim</div>
-      </div>
-
-      <div class="issue-wrap" style="margin-top:2rem;">
-        <div class="issue-row-2">
-          <div class="issue-content">
-            <h5>Troubleshooting: Alimentación Monopolar</h5>
-            <p>El LM324 alimentado con fuente monopolar (+10V/GND) no podía reproducir la semicitación negativa de la señal, aparentando una ganancia de 0.5 en lugar de la ganancia unitaria de diseño.</p>
-          </div>
-          <div class="issue-sol">
-            <strong>Corrección Aplicada</strong>
-            <span>Cambio a alimentación bipolar ±15 V. Inmediatamente la señal recuperó la ganancia K = 1 con la f_c definida teóricamente.</span>
-          </div>
-        </div>
       </div>
 
     </div>
