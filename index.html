@@ -620,7 +620,7 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
         <p>Mi participación en el equipo no se limitó a los cálculos. Estuve presente y en la elaboración del montaje físico de los circuitos, apoyé activamente las pruebas experimentales en el laboratorio y contribuí en la verificación de que los resultados experimentales concordaran con lo diseñado.</p>
         <p>Cuando los valores medidos en el osciloscopio diferían de los calculados, era parte del proceso de diagnóstico para identificar la causa ya fuera una tolerancia de componente, un error de montaje o una condición de alimentación incorrecta, como ocurrió en el Proyecto 1 con la alimentación monopolar del LM324 que reducía a la mitad la señal de la salida.</p>
         <p>Mi valor dentro del equipo estuvo en ser un puente entre la teoría y la práctica: no solo calcular, sino entender por qué los números decían lo que decían y traducirlo en acciones concretas sobre el circuito real.</p>
-        <p>A continuación se puede ver un ejemplo de un montaje en protoboard que realicé para el proyecto 5 de Sintetizador ECG para generar las 5 subondas, en este circuito realicé 4 de las 5 subondas donde cada una requería de un circuito diferente, este montaje fu el más desafiante de todos.</p>
+        <p>A continuación se puede ver un ejemplo de un montaje en protoboard que realicé para el proyecto 5 de Sintetizador ECG para generar las 5 subondas, en este circuito realicé 4 de las 5 subondas donde cada una requería de un circuito diferente, este montaje fue el más desafiante de todos.</p>
         <img src="imagenes/ejemplo.jpeg" alt="Circuito ECG" style="width:100%; border-radius:4px; margin-top:2rem; display:block;">
       </div>
       <div>
@@ -768,19 +768,6 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
       <div class="sk-grid">
         <div>
           <p class="sk-intro">La topología <strong>Sallen-Key</strong> permite implementar filtros activos de segundo orden (o más) prescindiendo de inductores físicos, reemplazándolos con redes RC y un amplificador operacional en configuración seguidor de voltaje. Para la configuración pasa-altas, Z₁ y Z₂ son capacitores mientras Z₃ y Z₄ son resistencias, en el caso de que se quisiera un filtro pasa-bajas se hace lo contrario con cada impedancia. Me encargué de todo el proceso: fundamentación teórica, cálculo de componentes, simulación en Multisim y montaje físico en protoboard con validación en osciloscopio RIGOL. Los resultados fueron los esperados, teniendo la frecuencia de corte esperada de 50 kHz y la ganancia esperada (Av=1).</p>
-          <p style="font-size:0.95rem; color:var(--muted); line-height:1.8; margin-bottom:1.2rem;">El modelado matemático partió de la deducción analítica de la función de transferencia en el dominio complejo, lo que permitió determinar con precisión los valores de componentes necesarios para alcanzar la frecuencia de corte y la respuesta en frecuencia deseadas.</p>
-          <div class="eq-box" style="max-width:600px; margin:0 auto 1.2rem auto;">
-            <div class="eq-label">Función de Transferencia — Sallen-Key Pasa-Altas</div>
-            <div style="color:#ffffff; text-align:center;">
-              \[ H(s) = \frac{A \cdot s^2}{s^2 + s\left(\dfrac{1}{R_2C_1} + \dfrac{1}{R_2C_2}\right) + \dfrac{1}{C_1 C_2 R_1 R_2}} \]
-            </div>
-          </div>
-          <div class="eq-box" style="max-width:600px; margin:0 auto;">
-            <div class="eq-label">Frecuencia de Corte (R₁=R₂=R, C₁=C₂=C)</div>
-            <div style="color:#ffffff; text-align:center;">
-              \[ f_c = \frac{1}{2\pi R C} = \frac{1}{2\pi \times 3.18\,k\Omega \times 1\,nF} \approx 50\,kHz \]
-            </div>
-          </div>
         </div>
         <div>
           <div class="data-box accent-top">
@@ -791,6 +778,25 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
             <div class="data-row"><span class="label">R₁ = R₂</span><span class="val">3.18 kΩ → 3.3 kΩ</span></div>
             <div class="data-row"><span class="label">f_c diseñada</span><span class="val">50 kHz</span></div>
             <div class="data-row"><span class="label">Alimentación</span><span class="val">±15 V (bipolar)</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider" style="margin:2rem 0;"></div>
+
+      <p style="font-size:0.95rem; color:var(--muted); line-height:1.8; margin-bottom:1.5rem; text-align:center;">El modelado matemático partió de la deducción analítica de la función de transferencia en el dominio complejo, permitiendo determinar con precisión los valores de componentes necesarios para alcanzar la frecuencia de corte y la respuesta en frecuencia deseadas.</p>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; max-width:900px; margin:0 auto 2rem auto;">
+        <div class="eq-box">
+          <div class="eq-label">Función de Transferencia — Sallen-Key Pasa-Altas</div>
+          <div style="color:#ffffff; text-align:center;">
+            \[ H(s) = \frac{A \cdot s^2}{s^2 + s\left(\dfrac{1}{R_2C_1} + \dfrac{1}{R_2C_2}\right) + \dfrac{1}{C_1 C_2 R_1 R_2}} \]
+          </div>
+        </div>
+        <div class="eq-box">
+          <div class="eq-label">Frecuencia de Corte (R₁=R₂=R, C₁=C₂=C)</div>
+          <div style="color:#ffffff; text-align:center;">
+            \[ f_c = \frac{1}{2\pi R C} = \frac{1}{2\pi \times 3.18\,k\Omega \times 1\,nF} \approx 50\,kHz \]
           </div>
         </div>
       </div>
