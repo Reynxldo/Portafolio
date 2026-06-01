@@ -844,6 +844,28 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
         <div class="etapa-card"><div class="etapa-num">04</div><div class="etapa-title">Derivador Práctico</div><p class="etapa-desc">Resalta bordes de colonia: V_out = −RC·dV/dt. RC = 10kΩ × 1µF = 0.01 s.</p></div>
         <div class="etapa-card"><div class="etapa-num">05</div><div class="etapa-title">Schmitt Trigger + NE555</div><p class="etapa-desc">Digitaliza sin rebotes. Monoestable: t_p = 1.1 × 100kΩ × 2µF = 0.22 s.</p></div>
       </div>
+
+      <div class="divider" style="margin:2rem 0;"></div>
+
+      <!-- MI APORTE -->
+      <div class="section-eyebrow" style="margin-bottom:0.8rem;">Mi aporte — Montaje de etapas y pruebas de laboratorio</div>
+      <div class="sk-grid">
+        <div>
+          <p class="sk-intro">Mi participación en este proyecto se concentró en el <strong>montaje físico de etapas del circuito</strong> sobre la protoboard y en la ejecución de las <strong>pruebas de laboratorio</strong>. En la fase de construcción intervine en el ensamblaje de las etapas analógicas, lo que implicó la correcta disposición de los componentes pasivos y activos, la verificación de conexiones entre etapas y el cuidado en la polaridad y valores de cada componente. Esta labor exige una comprensión sólida del esquemático y de los niveles de señal esperados en cada nodo del circuito. Durante las pruebas, participé en la verificación del comportamiento real del sistema contrastando las señales observadas con los valores teóricos, identificando de forma práctica las limitaciones no ideales del LM358, especialmente el impacto del voltaje de offset sobre la señal amplificada y la necesidad de un ajuste milimétrico en el potenciómetro del comparador para establecer correctamente el umbral de detección.</p>
+        </div>
+        <div>
+          <div class="data-box accent-top">
+            <h4>Parámetros del Sistema Final</h4>
+            <div class="data-row"><span class="label">Op-Amp utilizado</span><span class="val">LM358 (fuente simple)</span></div>
+            <div class="data-row"><span class="label">Alimentación</span><span class="val">+5 V / GND</span></div>
+            <div class="data-row"><span class="label">Ganancia etapa ×100</span><span class="val">Av = 101</span></div>
+            <div class="data-row"><span class="label">Frecuencia de corte filtro</span><span class="val">f_c = 20 Hz</span></div>
+            <div class="data-row"><span class="label">Pulso monoestable (NE555)</span><span class="val">t_p ≈ 0.22 s</span></div>
+            <div class="data-row"><span class="label">Costo total del MVP</span><span class="val">~$18.70 USD</span></div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
