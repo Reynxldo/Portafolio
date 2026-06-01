@@ -819,24 +819,7 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
       <p class="pcard-intro">  
     </div>
     <div class="pcard-body">
-      <div class="sk-grid" style="margin-bottom:2rem;">
-        <div>
-          <div class="img-feature" onclick="lb(this)">
-            <img src="imagenes/circuito_p2_png.png" alt="Diagrama de bloques Proyecto 2">
-            <div class="img-caption">Fig 2.1 — Diagrama de bloques del sistema Raster Scan</div>
-          </div>
-        </div>
-        <div>
-          <div class="img-feature" onclick="lb(this)">
-            <img src="imagenes/circuittoPROTOBOARD2.png" alt="Protoboard Proyecto 2">
-            <div class="img-caption">Fig 2.2 — Implementación física en protoboard</div>
-          </div>
-        </div>
-      </div>
-      <div class="img-feature" onclick="lb(this)" style="max-width:700px; margin-bottom:2rem;">
-        <img src="imagenes/osciloscopio_p2_png.png" alt="Señal osciloscopio Proyecto 2">
-        <div class="img-caption">Fig 2.3 — Señal de salida capturada en osciloscopio RIGOL</div>
-      </div>
+      <div class="section-eyebrow" style="margin-bottom:1.2rem;">Etapas analógicas del sistema</div>
       <div class="etapas-grid">
         <div class="etapa-card"><div class="etapa-num">01</div><div class="etapa-title">Transimpedancia</div><p class="etapa-desc">Convierte corriente del fotodiodo (µA) en tensión: V_out = −I_photo · R_f.</p></div>
         <div class="etapa-card"><div class="etapa-num">02</div><div class="etapa-title">Filtro Pasa-Bajas</div><p class="etapa-desc">Elimina ruido de red a 60 Hz. f_c = 20 Hz, R=10kΩ, C≈1µF.</p></div>
