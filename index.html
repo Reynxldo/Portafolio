@@ -726,7 +726,7 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
         <span class="ptag ptag-muted">Validado Experimentalmente</span>
       </div>
       <div class="pcard-title">Proyecto 1: Aplicaciones Avanzadas de Amplificadores Operacionales</div>
-      <p class="pcard-intro">En este proyecto se realizó un libro técnico y teórico colaborativo desarrollado en LaTeX (Overleaf) que documenta aplicaciones avanazadas del amplificador operacional entre todos los grupos, validadas mediante simulación en Multisim y pruebas físicas en laboratorio. Antes de abordar las aplicaciones, el equipo caracterizó experimentalmente las <strong>limitaciones reales del Op-Amp</strong> como el ancho de banda y Slew Rate, evidenciando la brecha entre el componente ideal y el real.</p>
+      <p class="pcard-intro">En este proyecto se realizó un libro técnico y teórico colaborativo desarrollado en LaTeX (Overleaf) que documenta aplicaciones avanazadas del amplificador operacional entre todos los grupos, validadas mediante simulación en Multisim y pruebas físicas en laboratorio. Antes de abordar las aplicaciones, el equipo caracterizó experimentalmente las <strong>limitaciones reales del Op-Amp</strong> como el ancho de banda y Slew Rate, evidenciando la brecha entre el componente ideal y el real. Cada equipo elaboró 5 aplicaciones, donde nuestro equipo elaboró las siguientes aplicaicones.</p>
     </div>
     <div class="pcard-body">
 
@@ -736,7 +736,7 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
         <div class="etapa-card">
           <div class="etapa-num">01</div>
           <div class="etapa-title">Filtro Sallen-Key</div>
-          <p class="etapa-desc">Filtro activo pasa-altas de 2° orden sin inductores. <strong>Aplicación a cargo de Reynaldo Medina.</strong></p>
+          <p class="etapa-desc">Filtro activo con arquitectura Sallen-Key pasa-altas de 2° orden sin inductores, solo con el uso de redes RC.</p>
         </div>
         <div class="etapa-card">
           <div class="etapa-num">02</div>
@@ -766,7 +766,7 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
       <div class="section-eyebrow" style="margin-bottom:0.8rem;">Mi aplicación — Filtro Activo Pasa-Altas Sallen-Key</div>
       <div class="sk-grid">
         <div>
-          <p class="sk-intro">La topología <strong>Sallen-Key</strong> permite implementar filtros activos de segundo orden prescindiendo de inductores físicos — reemplazándolos con redes RC y un amplificador operacional en configuración seguidor de voltaje. Para la configuración pasa-altas, Z₁ y Z₂ son capacitores mientras Z₃ y Z₄ son resistencias. Me encargué de todo el proceso: fundamentación teórica, cálculo de componentes, simulación en Multisim y montaje físico en protoboard con validación en osciloscopio RIGOL.</p>
+          <p class="sk-intro">La topología <strong>Sallen-Key</strong> permite implementar filtros activos de segundo orden (o más) prescindiendo de inductores físicos, reemplazándolos con redes RC y un amplificador operacional en configuración seguidor de voltaje. Para la configuración pasa-altas, Z₁ y Z₂ son capacitores mientras Z₃ y Z₄ son resistencias, en el caso de que se quisiera un filtro pasa-bajas se hace lo contrario con cada impedancia. Me encargué de todo el proceso: fundamentación teórica, cálculo de componentes, simulación en Multisim y montaje físico en protoboard con validación en osciloscopio RIGOL. Los resultados fueron los esperados, teniendo la frecuencia de corte esperada de 50 kHz y la ganancia esperada (Av=1).</p>
           <div class="eq-box">
             <div class="eq-label">Función de Transferencia — Sallen-Key Pasa-Altas</div>
             <div class="eq-formula">H(s) = <span class="hl">A · s²</span> / [ s² + s·(<span class="hl-o">1/R₂C₁ + 1/R₂C₂</span>) + <span class="hl">1/(C₁C₂R₁R₂)</span> ]</div>
