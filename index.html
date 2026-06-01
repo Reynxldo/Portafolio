@@ -726,12 +726,53 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
         <span class="ptag ptag-muted">Validado Experimentalmente</span>
       </div>
       <div class="pcard-title">Proyecto 1: Aplicaciones Avanzadas de Amplificadores Operacionales</div>
-      <p class="pcard-intro">Desarrollo completo del módulo Sallen-Key de segundo orden para el compendio técnico intergrupal. Cubrió desde la fundamentación teórica y la deducción analítica de la función de transferencia, hasta el dimensionamiento paramétrico, simulación en Multisim y validación experimental con osciloscopio RIGOL.</p>
+      <p class="pcard-intro">Compendio técnico colaborativo desarrollado en LaTeX (Overleaf) que documenta <strong>cinco aplicaciones de alto impacto</strong> del amplificador operacional, validadas mediante simulación en Multisim y pruebas físicas en laboratorio. Antes de abordar las aplicaciones, el equipo caracterizó experimentalmente las <strong>limitaciones reales del Op-Amp</strong> — ancho de banda y Slew Rate — evidenciando la brecha entre el componente ideal y el real.</p>
     </div>
     <div class="pcard-body">
+
+      <!-- FASE PREVIA -->
+      <div class="section-eyebrow" style="margin-bottom:0.8rem;">Fase previa — Calentamiento experimental</div>
+      <p class="sk-intro">Antes de diseñar las aplicaciones, el equipo implementó un <strong>amplificador no inversor con Av = 10</strong> para medir y documentar las limitaciones reales del LM324: ancho de banda efectivo y Slew Rate. Esta fase permitió comprender por qué el Op-Amp real se aleja del modelo ideal y cómo compensarlo — por ejemplo, duplicando el ancho de banda reduciendo la ganancia por etapa.</p>
+
+      <div class="divider" style="margin:2rem 0;"></div>
+
+      <!-- 5 APLICACIONES -->
+      <div class="section-eyebrow" style="margin-bottom:1.2rem;">Las 5 aplicaciones del equipo</div>
+      <div class="etapas-grid">
+        <div class="etapa-card">
+          <div class="etapa-num">01</div>
+          <div class="etapa-title">Filtro Sallen-Key</div>
+          <p class="etapa-desc">Filtro activo pasa-altas de 2° orden sin inductores. <strong>Aplicación a cargo de Reynaldo Medina.</strong></p>
+        </div>
+        <div class="etapa-card">
+          <div class="etapa-num">02</div>
+          <div class="etapa-title">Simulador de Inductancia</div>
+          <p class="etapa-desc">Circuito girador que emula el comportamiento de un inductor usando Op-Amps y componentes RC/C.</p>
+        </div>
+        <div class="etapa-card">
+          <div class="etapa-num">03</div>
+          <div class="etapa-title">Clamper</div>
+          <p class="etapa-desc">Circuito desplazador de nivel DC que reposiciona una señal AC respecto a un nivel de referencia definido.</p>
+        </div>
+        <div class="etapa-card">
+          <div class="etapa-num">04</div>
+          <div class="etapa-title">Amplificador de Audio Clase B</div>
+          <p class="etapa-desc">Etapa de potencia en configuración push-pull para amplificación de audio con alta eficiencia energética.</p>
+        </div>
+        <div class="etapa-card">
+          <div class="etapa-num">05</div>
+          <div class="etapa-title">Convertidor DAC</div>
+          <p class="etapa-desc">Conversor Digital-Analógico basado en red de resistencias en escalera R-2R con Op-Amp sumador inversor.</p>
+        </div>
+      </div>
+
+      <div class="divider" style="margin:2rem 0;"></div>
+
+      <!-- MI APLICACIÓN -->
+      <div class="section-eyebrow" style="margin-bottom:0.8rem;">Mi aplicación — Filtro Activo Pasa-Altas Sallen-Key</div>
       <div class="sk-grid">
         <div>
-          <p class="sk-intro">La arquitectura Sallen-Key prescinde de inductores físicos reemplazándolos con redes RC y un amplificador operacional. Para el filtro <strong>pasa-altas de segundo orden</strong>, Z₁ y Z₂ son capacitores y Z₃, Z₄ son resistencias.</p>
+          <p class="sk-intro">La topología <strong>Sallen-Key</strong> permite implementar filtros activos de segundo orden prescindiendo de inductores físicos — reemplazándolos con redes RC y un amplificador operacional en configuración seguidor de voltaje. Para la configuración pasa-altas, Z₁ y Z₂ son capacitores mientras Z₃ y Z₄ son resistencias. Me encargué de todo el proceso: fundamentación teórica, cálculo de componentes, simulación en Multisim y montaje físico en protoboard con validación en osciloscopio RIGOL.</p>
           <div class="eq-box">
             <div class="eq-label">Función de Transferencia — Sallen-Key Pasa-Altas</div>
             <div class="eq-formula">H(s) = <span class="hl">A · s²</span> / [ s² + s·(<span class="hl-o">1/R₂C₁ + 1/R₂C₂</span>) + <span class="hl">1/(C₁C₂R₁R₂)</span> ]</div>
@@ -754,11 +795,14 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
           </div>
         </div>
       </div>
+
       <div class="divider" style="margin:2rem 0;"></div>
+
       <div class="img-feature" onclick="lb(this)" style="max-width:700px;">
         <img src="imagenes/sallen-key.png" alt="Simulación Sallen-Key en Multisim">
         <div class="img-caption">Fig 1.1 — Simulación del circuito Sallen-Key en NI Multisim</div>
       </div>
+
       <div class="issue-wrap" style="margin-top:2rem;">
         <div class="issue-row-2">
           <div class="issue-content">
@@ -771,6 +815,7 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </div>
