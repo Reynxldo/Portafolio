@@ -768,13 +768,14 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
       <div class="sk-grid">
         <div>
           <p class="sk-intro">La topología <strong>Sallen-Key</strong> permite implementar filtros activos de segundo orden (o más) prescindiendo de inductores físicos, reemplazándolos con redes RC y un amplificador operacional en configuración seguidor de voltaje. Para la configuración pasa-altas, Z₁ y Z₂ son capacitores mientras Z₃ y Z₄ son resistencias, en el caso de que se quisiera un filtro pasa-bajas se hace lo contrario con cada impedancia. Me encargué de todo el proceso: fundamentación teórica, cálculo de componentes, simulación en Multisim y montaje físico en protoboard con validación en osciloscopio RIGOL. Los resultados fueron los esperados, teniendo la frecuencia de corte esperada de 50 kHz y la ganancia esperada (Av=1).</p>
-          <div class="eq-box">
+          <p style="font-size:0.95rem; color:var(--muted); line-height:1.8; margin-bottom:1.2rem;">El modelado matemático partió de la deducción analítica de la función de transferencia en el dominio complejo, lo que permitió determinar con precisión los valores de componentes necesarios para alcanzar la frecuencia de corte y la respuesta en frecuencia deseadas.</p>
+          <div class="eq-box" style="max-width:600px; margin:0 auto 1.2rem auto;">
             <div class="eq-label">Función de Transferencia — Sallen-Key Pasa-Altas</div>
             <div style="color:#ffffff; text-align:center;">
               \[ H(s) = \frac{A \cdot s^2}{s^2 + s\left(\dfrac{1}{R_2C_1} + \dfrac{1}{R_2C_2}\right) + \dfrac{1}{C_1 C_2 R_1 R_2}} \]
             </div>
           </div>
-          <div class="eq-box">
+          <div class="eq-box" style="max-width:600px; margin:0 auto;">
             <div class="eq-label">Frecuencia de Corte (R₁=R₂=R, C₁=C₂=C)</div>
             <div style="color:#ffffff; text-align:center;">
               \[ f_c = \frac{1}{2\pi R C} = \frac{1}{2\pi \times 3.18\,k\Omega \times 1\,nF} \approx 50\,kHz \]
