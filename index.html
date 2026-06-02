@@ -975,10 +975,39 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
   <button onclick="volverGaleria()" style="display:inline-flex;align-items:center;gap:0.5rem;background:var(--bg-raised);border:1px solid var(--border);color:var(--muted);padding:0.6rem 1.2rem;border-radius:4px;cursor:pointer;font-size:0.85rem;margin-bottom:2rem;transition:border-color 0.2s,color 0.2s;" onmouseover="this.style.borderColor='var(--amber)';this.style.color='var(--amber)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">← Volver a Proyectos</button>
   <div class="pcard">
     <div class="pcard-header">
-<div class="pcard-title">Proyecto 4: Sintetizador Analógico de Señal ECG</div>
-      <p class="pcard-intro">El desafío más exigente del semestre. El equipo diseñó un sintetizador puramente analógico capaz de reproducir la actividad bioeléctrica cardíaca mediante superposición de funciones gaussianas, con control paramétrico para emular cardiopatías clínicas reales.</p>
+      <div class="pcard-title">Proyecto 4: Sintetizador Analógico de Señal ECG</div>
+      <p class="pcard-intro">El equipo diseñó un sintetizador puramente analógico capaz de reproducir la actividad bioeléctrica cardíaca mediante superposición de funciones gaussianas, con control paramétrico para emular cardiopatías clínicas reales.</p>
     </div>
     <div class="pcard-body">
+
+      <!-- INTRODUCCIÓN -->
+      <div class="section-eyebrow" style="margin-bottom:0.8rem;">Introducción y objetivos del proyecto</div>
+      <p style="font-size:0.95rem; color:var(--muted); line-height:1.8; margin-bottom:1.5rem; max-width:820px;">El proyecto tiene como propósito definir la base conceptual y operativa para el desarrollo de un sintetizador analógico de señal ECG capaz de representar condiciones cardíacas normales y al menos tres anomalías. El trabajo se centra en comprender el ECG como una señal compuesta por subondas P, Q, R, S y T con características específicas de amplitud, duración y posición temporal, y en traducir esa comprensión a un modelo funcional realizable desde la electrónica analógica. El resultado es un documento que establece con claridad qué se va a construir y cómo se entiende el problema, de modo que la fase de implementación pueda desarrollarse sin ambigüedades.</p>
+
+      <div class="divider" style="margin:2rem 0;"></div>
+
+      <!-- MI APORTE -->
+      <div class="section-eyebrow" style="margin-bottom:0.8rem;">Mi aporte — Selección y descripción de anomalías</div>
+      <div class="sk-grid" style="margin-bottom:2rem;">
+        <div>
+          <p class="sk-intro">Mi participación se concentró en la selección y descripción técnica de las anomalías cardíacas del sistema. Para cada anomalía identifiqué qué parámetro de la señal se ve afectado —ya sea el período del ciclo, la amplitud de una subonda, su posición temporal o su ancho— y traduje ese cambio fisiológico a términos concretos del modelo de síntesis gaussiano, definiendo cómo debería ajustarse cada parámetro en el sintetizador para representar correctamente la condición. Las tres anomalías seleccionadas fueron taquicardia sinusal, fibrilación auricular y bloqueo auriculoventricular de primer grado.</p>
+        </div>
+        <div>
+          <div class="data-box accent-top">
+            <h4>Anomalías Seleccionadas</h4>
+            <div class="data-row"><span class="label">Taquicardia sinusal</span><span class="val">T &lt; 600 ms</span></div>
+            <div class="data-row"><span class="label">Fibrilación auricular</span><span class="val">Ap = 0, ritmo irregular</span></div>
+            <div class="data-row"><span class="label">Bloqueo AV 1° grado</span><span class="val">Intervalo PR &gt; 200 ms</span></div>
+            <div class="data-row"><span class="label">Modelo de síntesis</span><span class="val">Suma de gaussianas</span></div>
+            <div class="data-row"><span class="label">Frecuencia nominal</span><span class="val">75 lpm / 800 ms</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider" style="margin:2rem 0;"></div>
+
+      <!-- RESULTADOS -->
+      <div class="section-eyebrow" style="margin-bottom:1.2rem;">Modelo y caracterización del sistema</div>
       <div class="sk-grid" style="margin-bottom:2rem;">
         <div>
           <div class="img-feature" onclick="lb(this)">
@@ -1041,6 +1070,7 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
           </ul>
         </div>
       </div>
+
     </div>
   </div>
 </div>
