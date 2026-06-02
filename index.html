@@ -923,6 +923,34 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
           <div class="data-row"><span class="label">Costo fabricación</span><span class="val">$4 USD</span></div>
         </div>
       </div>
+
+      <div class="divider" style="margin:2rem 0;"></div>
+
+      <!-- INTRODUCCIÓN Y OBJETIVOS P3 -->
+      <div class="section-eyebrow" style="margin-bottom:0.8rem;">Introducción y objetivos del proyecto</div>
+      <p style="font-size:0.95rem; color:var(--muted); line-height:1.8; margin-bottom:1.5rem; max-width:820px;">El proyecto consiste en el desarrollo de un tutorial técnico completo sobre diseño de PCB en EasyEDA, tomando como caso de estudio el filtro activo Sallen-Key. El objetivo central es documentar de forma reproducible el flujo completo que lleva un circuito desde el esquemático hasta un archivo listo para fabricación industrial, justificando cada decisión de diseño y manteniéndose por debajo de los 20 USD en costo total. Para lograrlo se trabajó con criterios DRC del fabricante JLCPCB, principios DFM aplicados desde la ubicación de componentes hasta el enrutamiento, y generación de archivos Gerber y BOM como entregables finales.</p>
+
+      <div class="divider" style="margin:2rem 0;"></div>
+
+      <!-- MI APORTE P3 -->
+      <div class="section-eyebrow" style="margin-bottom:0.8rem;">Mi aporte — Tutorial de diseño y fabricación de PCB</div>
+      <div class="sk-grid">
+        <div>
+          <p class="sk-intro">Me encargué del desarrollo del tutorial técnico, cubriendo desde la captura del esquemático en EasyEDA hasta la validación del diseño en JLCPCB. Seleccioné componentes de la biblioteca LCSC con encapsulados THT estándar, definí las dimensiones de la tarjeta en 50 × 40 mm y apliqué criterios DFM en la distribución física y el enrutamiento. Configuré anchos de pista de 10 mils para señal y 20 mils para alimentación, apliqué planos de masa en ambas caras y ejecuté la verificación DRC obteniendo 0 errores. Como resultado, el diseño quedó listo para fabricación con un costo total de aproximadamente $4 USD por 5 placas, cumpliendo el requerimiento de mantenerse por debajo de los 20 USD.</p>
+        </div>
+        <div>
+          <div class="data-box accent-top">
+            <h4>Parámetros del Diseño Final</h4>
+            <div class="data-row"><span class="label">Herramienta de diseño</span><span class="val">EasyEDA</span></div>
+            <div class="data-row"><span class="label">Circuito base</span><span class="val">Filtro Sallen-Key</span></div>
+            <div class="data-row"><span class="label">Dimensiones tarjeta</span><span class="val">50 × 40 mm</span></div>
+            <div class="data-row"><span class="label">Errores DRC finales</span><span class="val">0 errores ✓</span></div>
+            <div class="data-row"><span class="label">Costo fabricación</span><span class="val">$4 USD / 5 placas</span></div>
+            <div class="data-row"><span class="label">Proveedor</span><span class="val">JLCPCB</span></div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
