@@ -476,6 +476,7 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
       <div style="margin-bottom:1.5rem;">
         <div style="font-family:'Syne',sans-serif; font-size:0.72rem; color:var(--amber); text-transform:uppercase; letter-spacing:0.2em; margin-bottom:0.5rem;">Marco metodológico</div>
         <div style="font-size:1.4rem; font-weight:700; color:var(--warm-white); letter-spacing:-0.3px;">Enfoque <em style="color:var(--amber); font-style:normal;">CDIO</em></div>
+        <p style="font-size:0.95rem; color:var(--muted); line-height:1.8; margin-top:1rem; max-width:860px;">El desarrollo de los proyectos de este portafolio estuvo guiado por la metodología <strong style="color:var(--warm-white);">CDIO</strong> (Concebir, Diseñar, Implementar y Operar), un marco de ingeniería que orienta cómo se aborda un problema desde la idea hasta el sistema funcionando. No todos los proyectos recorren las cuatro fases completas; algunos se concentran en concebir y diseñar, otros avanzan hasta la implementación física, y unos pocos cierran el ciclo con la operación y validación experimental. Lo importante es que cada proyecto tiene una intención clara dentro de ese proceso. Haz clic en cada letra para conocer en qué consistió cada fase.</p>
       </div>
 
       <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px;">
@@ -510,10 +511,10 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
 
     <script>
     var cdioInfo = {
-      C: { fase:'Concebir', desc:'Identificación del problema real, definición de objetivos y especificación de requisitos técnicos. En esta fase se entiende qué se quiere resolver y por qué antes de tocar un solo componente.' },
-      D: { fase:'Diseñar', desc:'Modelado matemático, derivación de funciones de transferencia, dimensionamiento de componentes y simulación en NI Multisim. El diseño convierte los requisitos en especificaciones precisas y verificables.' },
-      I: { fase:'Implementar', desc:'Montaje físico en protoboard, diseño de PCB en EasyEDA y generación de archivos Gerber para fabricación. La implementación traduce el diseño en un circuito real y funcional.' },
-      O: { fase:'Operar', desc:'Validación experimental con osciloscopio RIGOL, análisis crítico de resultados y documentación de desviaciones respecto al diseño teórico. La operación cierra el ciclo verificando que el sistema cumple su propósito.' }
+      C: { fase:'Concebir', desc:'Es la fase donde nace el proyecto. Se identifica el problema real, se define qué se quiere lograr y por qué, y se establecen los requisitos técnicos antes de tocar un solo componente. En esta etapa se investiga, se comprende el contexto y se toman las decisiones que van a orientar todo lo que viene después. Sin una buena concepción, el diseño no tiene dirección clara.' },
+      D: { fase:'Diseñar', desc:'Con el problema claro, se pasa a traducirlo en especificaciones técnicas concretas: modelado matemático, derivación de funciones de transferencia, selección y dimensionamiento de componentes, y simulación en NI Multisim. El diseño es el puente entre la idea y el circuito real; aquí se verifican los cálculos antes de gastar tiempo y materiales en el laboratorio.' },
+      I: { fase:'Implementar', desc:'Es donde el diseño cobra vida física. Incluye el montaje en protoboard, la verificación por etapas con multímetro y osciloscopio, el diseño de PCB en EasyEDA y la generación de archivos Gerber para fabricación. Implementar también significa resolver los problemas que la simulación no anticipó (tolerancias reales, ruido, limitaciones del Op-Amp) y tomar decisiones sobre la marcha.' },
+      O: { fase:'Operar', desc:'La fase final cierra el ciclo: se valida que el sistema cumple su propósito en condiciones reales. Se capturan osciloscopios, se miden parámetros clave, se comparan con los valores teóricos y se documenta cualquier desviación con su causa identificada. Operar no es solo que funcione; es entender por qué funciona (o por qué no) y qué se haría diferente en una segunda iteración.' }
     };
     function abrirCDIO(l) {
       document.getElementById('cdio-m-letra').textContent = l;
