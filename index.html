@@ -575,8 +575,8 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
   <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-bottom:1.2rem;">
 
     <div class="miembro" style="padding:0; overflow:hidden; display:flex; flex-direction:row;">
-      <div style="width:120px; flex-shrink:0; background:var(--bg-raised); display:flex; align-items:center; justify-content:center; min-height:140px;">
-        <div style="font-size:28px; font-weight:700; color:var(--amber); font-family:'Syne',sans-serif;">JS</div>
+      <div style="width:120px; flex-shrink:0; overflow:hidden; min-height:140px;">
+        <img src="imagenes/julian.png" alt="Julián Silva" style="width:100%; height:100%; object-fit:cover; object-position:center 20%; display:block;">
       </div>
       <div style="padding:1.2rem 1.4rem; border-left:3px solid var(--amber); flex:1;">
         <div class="miembro-nombre">Julián Silva</div>
@@ -586,8 +586,8 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
     </div>
 
     <div class="miembro" style="padding:0; overflow:hidden; display:flex; flex-direction:row;">
-      <div style="width:120px; flex-shrink:0; background:var(--bg-raised); display:flex; align-items:center; justify-content:center; min-height:140px;">
-        <div style="font-size:28px; font-weight:700; color:var(--amber); font-family:'Syne',sans-serif;">BP</div>
+      <div style="width:120px; flex-shrink:0; overflow:hidden; min-height:140px;">
+        <img src="imagenes/brayan.png" alt="Brayan Pinzón" style="width:100%; height:100%; object-fit:cover; object-position:center 20%; display:block;">
       </div>
       <div style="padding:1.2rem 1.4rem; border-left:3px solid var(--amber); flex:1;">
         <div class="miembro-nombre">Brayan Pinzón</div>
@@ -1199,21 +1199,6 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
             <div class="data-row"><span class="label">Costo JLCPCB</span><span class="val">$62.20 USD</span></div>
             <div class="data-row"><span class="label">Fabricante</span><span class="val">JLCPCB / LCSC</span></div>
           </div>
-        </div>
-      </div>
-
-      <div class="divider" style="margin:2rem 0;"></div>
-
-      <!-- ERRORES -->
-      <div class="section-eyebrow" style="margin-bottom:0.8rem;">Evolución y resolución de errores</div>
-      <div class="sk-grid" style="margin-bottom:2.5rem;">
-        <div class="data-box">
-          <h4>Oscilaciones residuales (Ringing)</h4>
-          <p style="font-size:0.88rem; color:var(--muted); line-height:1.6; margin:0;">Las topologías clásicas de filtrado deformaban las ondas P y T con sobreimpulsos en los flancos de subida. Se resolvió adoptando una transferencia tipo <strong>Bessel-Thompson</strong> que garantiza retraso de grupo constante sin picos destructivos.</p>
-        </div>
-        <div class="data-box">
-          <h4>Atenuación por efecto de carga</h4>
-          <p style="font-size:0.88rem; color:var(--muted); line-height:1.6; margin:0;">Conectar los divisores resistivos directamente al sumador alteraba la impedancia Thévenin y modificaba las ganancias. Se solucionó implementando una <strong>red de Buffers de aislamiento</strong> para cada canal previo a la etapa de suma.</p>
         </div>
       </div>
 
