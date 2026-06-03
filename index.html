@@ -1203,6 +1203,11 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
         </div>
       </div>
 
+      <div class="divider" style="margin:2rem 0;"></div>
+
+      <div class="section-eyebrow" style="margin-bottom:0.6rem;">Implementación y Resultados</div>
+      <p style="font-size:0.95rem; color:var(--muted); line-height:1.8; margin-bottom:1.5rem; max-width:860px;">El sintetizador ECG pasó por tres fases de materialización: primero el montaje experimental en protoboard para validar cada subonda por separado, luego la captura de la señal completa en el osciloscopio RIGOL como evidencia del funcionamiento real, y finalmente el diseño del PCB en EasyEDA con vista 3D previa a la fabricación industrial.</p>
+
       <div class="sk-grid" style="margin-bottom:1.5rem;">
         <div>
           <div class="img-feature" onclick="lb(this)">
@@ -1216,6 +1221,11 @@ document.addEventListener('DOMContentLoaded', () => showSection('inicio'));
             <div class="img-caption">Fig 5.2 — Señal ECG sintetizada capturada en osciloscopio RIGOL</div>
           </div>
         </div>
+      </div>
+
+      <div class="img-feature" onclick="lb(this)" style="max-width:700px; margin:0 auto 1.5rem auto;">
+        <img src="imagenes/3D.png" alt="Vista 3D PCB sintetizador ECG">
+        <div class="img-caption">Fig 5.3 — Vista 3D del PCB del sintetizador ECG diseñado en EasyEDA</div>
       </div>
 
       <p style="font-size:0.85rem; color:var(--muted); margin-bottom:1rem; max-width:820px;">Para más información sobre el proyecto consulta la documentación completa:</p>
